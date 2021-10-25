@@ -1,6 +1,5 @@
 ### Table of contents
 - [Introduction](#introduction)
-    - [🔗 My portfolio](#-my-portfolio)
     - [📚 My skills](#-my-skills)
   - [🛠 Recent projects](#-recent-projects)
     - [♊️ Twindle](#️-twindle)
@@ -12,9 +11,8 @@ My name is Jascha Huisman, a software developer based near Rotterdam and Breda, 
 
 My interests lie in the field of front-end development and creative technologies, and my main goal is to become a creative developer working on cool challenging projects.
 
-#### 🔗 My portfolio
+Read more about me at [my website](https://www.jaschahuisman.nl).
 
-My portfolio is available on [my website](http://www.jaschahuisman.nl).
 
 #### 📚 My skills
 
