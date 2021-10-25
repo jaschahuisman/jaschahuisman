@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
 							<Button
 								size='small'
 								icon={<FaGithub />}
-								href='https://www.github.com/jaschahuisman/my-story'
+								href='https://www.github.com/jaschahuisman/jaschahuisman'
 								target='_blank'
 								rel='noopener noreferrer'
 								title='GitHub repository'
