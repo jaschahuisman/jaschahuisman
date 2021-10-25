@@ -1,17 +1,20 @@
 ### Table of contents
 - [Introduction](#introduction)
-    - [📚 My skills](#-my-skills)
-  - [🛠 Recent projects](#-recent-projects)
-    - [♊️ Twindle](#️-twindle)
-    - [🖋 Scriptorium](#-scriptorium)
+      - [📚 My skills](#-my-skills)
+    - [🛠 Recent projects](#-recent-projects)
+      - [♊️ Twindle](#️-twindle)
+      - [🖋 Scriptorium](#-scriptorium)
+
+> ### This repository
+> This repository is the repository of my [landing page](https://www.jaschahuisman.nl). Visit it to get to know more about me!
 
 # Introduction
 
 My name is Jascha Huisman, a software developer based near Rotterdam and Breda, the Netherlands. Originally I was trained as a multimedia designer and critical thinker at Avans University of Applied Sciences in Breda.
 
-My interests lie in the field of front-end development and creative technologies, and my main goal is to become a creative developer working on cool challenging projects.
+My interests lie in the field of front-end development and creative technologies, and my main goal is to become better at being a creative developer by working on cool challenging projects.
 
-Read more about me at [my website](https://www.jaschahuisman.nl).
+
 
 
 #### 📚 My skills

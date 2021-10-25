@@ -1,0 +1,42 @@
+.project-card
+    display: flex
+    flex-direction: column
+    height: 350px
+    padding: 2rem 0
+    @include media('<=tablet')
+        height: auto
+        justify-content: center
+    &__title
+        font-family: 'Ubuntu', sans-serif
+        font-size: 2rem
+        margin-bottom: 0.5rem
+
+    &__category
+        font-size: 1.25rem
+        font-family: 'Ubuntu', sans-serif
+        font-weight: 400
+        margin-bottom: 1rem
+        letter-spacing: 0.5px
+        color: $midGray
+
+    &__description
+        line-height: 150%
+        margin-bottom: 2rem
+
+    &__link
+        display: inline-flex
+        align-items: center
+        position: relative
+        font-size: 1.25rem
+        color: $black-text
+
+        & .material-icons-outlined
+            margin-left: 0.5rem
+            transition: 300ms
+
+        &:hover
+            & .material-icons-outlined
+                margin-left: 1rem
+
+        @include media('<=tablet')
+            justify-content: center

@@ -1,0 +1,40 @@
+.button
+    display: inline-flex
+    gam: 1rem
+    border: none
+    outline: none
+    padding: 1.25em 2em
+    vertical-align: middle
+    font-weight: 600
+    font-family: 'Montserrat', sans-serif
+    cursor: pointer
+    transition: 300ms
+    text-align: center
+    justify-content: center
+    align-items: center
+
+    &__icon
+        margin-left: -0.5em
+        margin-right: 1.25em
+        vertical-align: middle
+
+    &:hover
+        transform: scale(0.99)
+
+    &--primary
+        background: #411e94
+        color: #f1e6ff
+        &:hover
+            background: #371981
+            color: #ffffff
+    &--secondary
+        background: #f1e6ff
+        color: #411e94
+        &:hover
+            background: #f6f0ff
+            color: #371981
+
+    &--small
+        font-size: 1rem
+    &--normal
+        font-size: 1.2rem

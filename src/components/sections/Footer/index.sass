@@ -1,0 +1,53 @@
+.footer
+    &__scrolltop
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        margin-bottom: 3rem
+        cursor: pointer
+        .material-icons-outlined
+            margin-left: 1rem
+            color: $lightGray
+
+    &__sections
+        padding: 3rem 0
+        border-top: 1px solid $lightGray
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-gap: 2rem
+        @include media('<=tablet')
+            grid-template-columns: 1fr
+            grod-template-rows: 1fr 1fr 1fr
+
+    &__section
+        display: flex
+        flex-direction: column
+        @include media('<=tablet')
+            text-align: center
+        .button
+            display: inline-block
+            margin-right: auto
+            margin-top: 1.5rem
+            @include media('<=tablet')
+                margin-left: auto
+                margin-bottom: 1.5rem
+            @include media('<=phone')
+                margin-left: 0
+                margin-right: 0
+                width: 100%
+        &__title
+            margin-bottom: 0.5rem
+            font-size: 1.5rem
+        &__social-icons
+            margin-top: 1rem
+            list-style: none
+            display: flex
+            @include media('<=tablet')
+                justify-content: center
+            &__icon
+                font-size: 1.5rem
+                margin-right: 1rem
+                transition: 300ms
+                &:last-child
+                    margin-right: 0

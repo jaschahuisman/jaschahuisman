@@ -1,0 +1,45 @@
+.navigation
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 8rem
+    font-family: 'Ubuntu', sans-serif
+    font-size: 1rem
+
+    @include media('<=tablet')
+        flex-direction: column
+
+    &__logo
+        display: block
+        padding: 2rem 1rem 2rem 0
+        font-weight: 700
+        transition: 300ms
+
+        &:hover
+            transform: scale(1.05)
+
+        @include media('<=tablet')
+            padding: 1rem 0
+
+    &__menu
+        display: flex
+
+        @include media('<=tablet')
+            padding: 0
+
+        &__item
+            margin-left: 2rem
+            cursor: pointer
+            padding: 2rem 0
+            color: $gray
+            transition: 300ms
+
+            @include media('<=tablet')
+                padding: 1rem 0
+                margin: 0 1rem
+
+            &:hover
+                color: $black-text
+
+            &--active
+                color: $black-text

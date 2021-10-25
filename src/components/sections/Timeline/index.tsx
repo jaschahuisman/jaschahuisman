@@ -1,0 +1,65 @@
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import HandpickedSvg from '../../../assets/svg/handpicked.svg';
+import HkuSvg from '../../../assets/svg/hku.svg';
+import TimelineItem from '../../molecules/TimelineItem';
+import Container from '../../wrappers/Container';
+import Section from '../../wrappers/Section';
+
+const TimelineSection: React.FC = () => {
+	const timelineRootRef = useRef<HTMLSpanElement>(null);
+
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		gsap.from(timelineRootRef.current, {
+			opacity: 0,
+			scrollTrigger: {
+				trigger: timelineRootRef.current,
+				start: 'top center',
+				end: 'bottom center',
+			},
+		});
+	}, []);
+
+	return (
+		<Container>
+			<Section className='timeline-section'>
+				<h2 className='section-title timeline-section__title'>My skill-development-timeline</h2>
+				<div className='timeline' role='list'>
+					<span className='timeline__root' ref={timelineRootRef} />
+					<TimelineItem
+						title='Avans University of Applied Sciences'
+						date='2019'
+						description='Propaedeutic year Bachelor Communication and Multimedia Design'
+						image='data:image/png;base64,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'
+						index={0}
+					/>
+					<TimelineItem
+						title='Handpicked Agencies'
+						date='2020'
+						description='Tech elaboration internship & freelance at Handpicked Labs innovation centre'
+						image={HandpickedSvg}
+						index={1}
+					/>
+					<TimelineItem
+						title='University of the Arts Utrecht'
+						date='2021'
+						description='Minor Extended Reality '
+						image={HkuSvg}
+						index={2}
+					/>
+					{/* <TimelineItem
+						title='Avans University of Applied Sciences'
+						date='2022'
+						description='Bachelor of Science Communication and Multimedia Design'
+						image='data:image/png;base64,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'
+						index={3}
+					/> */}
+				</div>
+			</Section>
+		</Container>
+	);
+};
+
+export default TimelineSection;
