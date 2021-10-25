@@ -1,6 +1,6 @@
 ### Table of contents
 - [Introduction](#introduction)
-      - [📚 My skills](#-my-skills)
+    - [📚 My skills](#-my-skills)
     - [🛠 Recent projects](#-recent-projects)
       - [♊️ Twindle](#️-twindle)
       - [🖋 Scriptorium](#-scriptorium)
