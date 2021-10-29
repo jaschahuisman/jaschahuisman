@@ -92,7 +92,7 @@ export default defineComponent({
       border-radius: 50%
       left: calc(-0.35rem + 1px)
     &::before
-      top: 0
+      top: -0.75rem
     &::after
       bottom: 0
     @include media('<=tablet')
