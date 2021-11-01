@@ -1,6 +1,6 @@
 <template>
   <Container class="navigation-container">
-    <nav class="navigation" role="navigation">
+    <nav class="navigation" role="navigation" ref="navigation">
       <a class="navigation__logo" title="Home" href="/">Jascha Huisman</a>
       <div class="navigation__menu" role="list">
         <a
@@ -21,6 +21,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import Container from "@/components/wrappers/Container.vue";
+import useAnimator from "@/components/hooks/useAnimator";
 
 export interface IMenuItem {
   id: number;
@@ -38,6 +39,15 @@ export default defineComponent({
       type: Object as PropType<Array<IMenuItem>>,
       required: true,
     },
+  },
+  setup() {
+    const { animateFrom, animateTo } = useAnimator();
+    return { animateFrom, animateTo };
+  },
+  mounted() {
+    const element = this.$refs.navigation as HTMLElement;
+    const options = { opacity: 0, duration: 1.5, y: -100, ease: "power3.Out" };
+    this.animateFrom(element, options);
   },
 });
 </script>
@@ -58,7 +68,7 @@ export default defineComponent({
     justify-content: center
   &__logo
     font-size: 1rem
-    color: $midGray
+    color: $darkGray
     display: block
     font-weight: 700
     transition: 300ms

@@ -1,12 +1,16 @@
 <template>
   <Container class="header-container">
     <Section class="header-section" id="header">
-      <header class="header" role="banner">
-        <span class="header__title"
-          >Design & development <br />intertwined</span
-        >
+      <header class="header" role="banner" ref="header">
+        <span class="header__title" ref="headerTitle">
+          Design & development <br />intertwined
+        </span>
         <span class="header__image-wrapper">
-          <img class="header__image" src="@/assets/img/banner.jpg" />
+          <img
+            class="header__image"
+            src="@/assets/img/banner.jpg"
+            ref="headerImage"
+          />
           <Decoration class="header__image__decoration" />
         </span>
       </header>
@@ -14,16 +18,35 @@
   </Container>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import Container from "@/components/wrappers/Container.vue";
 import Section from "@/components/wrappers/Section.vue";
+import useAnimator from "@/components/hooks/useAnimator";
 
 export default defineComponent({
   name: "HeaderSection",
   components: {
     Container,
     Section,
+  },
+  setup() {
+    const { animateFrom, animateTo } = useAnimator();
+    return { animateFrom, animateTo };
+  },
+  mounted() {
+    const header = this.$refs.header as HTMLElement;
+    const title = this.$refs.headerTitle as HTMLElement;
+    const image = this.$refs.headerImage as HTMLElement;
+    const scrollTrigger = {
+      trigger: header,
+      start: "90% center",
+      end: "150% center",
+      markers: true,
+      scrub: 1,
+    };
+    this.animateTo(title, { opacity: 0, x: -50, scrollTrigger });
+    this.animateTo(image, { opacity: 0, x: 50, scrollTrigger });
   },
 });
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="section" role="group">
+  <section class="section" role="group" ref="section">
     <h2
       class="section__title"
       v-if="title"
@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import useAnimator from "@/components/hooks/useAnimator";
 
 export default defineComponent({
   name: "Section",
@@ -25,6 +26,24 @@ export default defineComponent({
       type: String,
       required: false,
     },
+  },
+  setup() {
+    const { animateFrom, animateTo } = useAnimator();
+    return { animateFrom, animateTo };
+  },
+  mounted() {
+    const element = this.$refs.section as HTMLElement;
+    this.animateFrom(element, {
+      opacity: 0,
+      y: -50,
+      scale: 0.95,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 90%",
+        end: "60% 30%",
+        scrub: true,
+      },
+    });
   },
 });
 </script>

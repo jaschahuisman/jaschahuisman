@@ -6,12 +6,12 @@
       title="My skill-development-timeline"
       titleOffset="3rem"
     >
-      <div class="timeline">
-        <span class="timeline__root" />
+      <div class="timeline" ref="timeline">
+        <span class="timeline__root" ref="timelineRoot" />
         <TimelineItem
-          v-for="timelineItem in timeline"
-          :index="timeline.indexOf(timelineItem)"
-          :key="timelineItem.title"
+          v-for="(timelineItem, index) in timelineItems"
+          :index="index"
+          :key="index"
           :title="timelineItem.title"
           :description="timelineItem.description"
           :date="timelineItem.date"
@@ -27,6 +27,7 @@ import { defineComponent } from "vue";
 import Container from "@/components/wrappers/Container.vue";
 import Section from "@/components/wrappers/Section.vue";
 import TimelineItem from "@/components/molecules/TimelineItem.vue";
+import useAnimator from "../hooks/useAnimator";
 
 interface ITimelineData {
   title: string;
@@ -42,9 +43,9 @@ export default defineComponent({
     Section,
     TimelineItem,
   },
-  data(): { timeline: ITimelineData[] } {
+  data(): { timelineItems: ITimelineData[] } {
     return {
-      timeline: [
+      timelineItems: [
         {
           title: "Avans University of Applied Sciences",
           date: "2019",
@@ -67,6 +68,24 @@ export default defineComponent({
         },
       ],
     };
+  },
+  setup() {
+    const { animateFrom } = useAnimator();
+    return { animateFrom };
+  },
+  mounted() {
+    const timelineElement = this.$refs.timeline as HTMLElement;
+    const timelineRootElement = this.$refs.timelineRoot as HTMLElement;
+    this.animateFrom(timelineRootElement, {
+      height: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: timelineElement,
+        start: "top 50%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
   },
 });
 </script>

@@ -18,8 +18,8 @@ export default defineComponent({
   data() {
     return {
       menu: [
-        { id: 0, label: "About", href: "#about" },
-        { id: 1, label: "Projects", href: "#projects" },
+        { id: 0, label: "About", href: "/#about" },
+        { id: 1, label: "Contact", href: "/#contact" },
       ] as IMenuItem[],
     };
   },
