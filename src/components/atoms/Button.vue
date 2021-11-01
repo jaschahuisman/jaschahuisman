@@ -5,6 +5,8 @@
       :class="`button--${size} button--${variant}`"
       role="button"
       :href="href"
+      :target="newTab ? '_blank' : null"
+      :rel="newTab ? 'noreferrer noopener' : null"
     >
       <Decoration class="button__decoration" />
       <span class="button__background"></span>
@@ -34,6 +36,10 @@ export default defineComponent({
       type: String,
       required: false,
     },
+    newTab: {
+      type: Boolean,
+      required: false,
+    },
     size: {
       type: String as PropType<IButtonProps["size"]>,
       default: function () {
@@ -52,7 +58,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .button
   position: relative
   display: inline-flex
@@ -65,6 +71,8 @@ export default defineComponent({
     transform: translate(2px, 2px)
     .button__decoration
       transform: translate(-5px, -5px)
+  svg
+    margin-right: 0.5em
   &__decoration
     height: 100%
     width: 100%
