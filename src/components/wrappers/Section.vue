@@ -26,6 +26,11 @@ export default defineComponent({
       type: String,
       required: false,
     },
+    animate: {
+      type: Boolean,
+      default: true,
+      required: false,
+    },
   },
   setup() {
     const { animateFrom, animateTo } = useAnimator();
@@ -33,17 +38,19 @@ export default defineComponent({
   },
   mounted() {
     const element = this.$refs.section as HTMLElement;
-    this.animateFrom(element, {
-      opacity: 0,
-      y: -50,
-      scale: 0.95,
-      scrollTrigger: {
-        trigger: element,
-        start: "top 90%",
-        end: "60% 30%",
-        scrub: true,
-      },
-    });
+    if (this.animate) {
+      this.animateFrom(element, {
+        opacity: 0,
+        y: -50,
+        scale: 0.95,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 90%",
+          end: "60% 30%",
+          scrub: true,
+        },
+      });
+    }
   },
 });
 </script>

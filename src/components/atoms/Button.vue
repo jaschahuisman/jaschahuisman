@@ -64,6 +64,7 @@ export default defineComponent({
   display: inline-flex
   align-items: center
   justify-content: center
+  text-align: center
   padding: 1.25rem 2rem
   font-family: "Montserrat", sans-serif
   transition: 300ms

@@ -62,12 +62,12 @@ export default defineComponent({
   justify-content: space-between
   height: 8rem
   width: 100%
-  font-size: 1rem
+  font-size: 1.2rem
   @include media("<=tablet")
     flex-direction: column
     justify-content: center
   &__logo
-    font-size: 1rem
+    font-size: 1.2rem
     color: $darkGray
     display: block
     font-weight: 700

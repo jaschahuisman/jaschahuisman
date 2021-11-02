@@ -1,18 +1,14 @@
 l/* eslint-disable prettier/prettier */
 <template>
   <Container class="header-container">
-    <Section class="header-section" id="header">
+    <Section class="header-section" id="header" :animate="false">
       <header class="header" role="banner" ref="header">
         <span class="header__title" ref="headerTitle">
           Design & development <br />intertwined
         </span>
-        <span class="header__image-wrapper">
-          <img
-            class="header__image"
-            src="@/assets/img/banner.jpg"
-            ref="headerImage"
-          />
-          <Decoration class="header__image__decoration" />
+        <span class="header__image-wrapper" ref="headerImage">
+          <img class="header__image" src="@/assets/img/banner.jpg" />
+          <Decoration class="header__decoration" />
         </span>
       </header>
     </Section>
@@ -76,5 +72,12 @@ export default defineComponent({
   &__image
     width: 100%
     height: 100%
+    object-fit: cover
+  &__decoration
+    background: red
+    width: 100%
+    height: 100%
+    top: 2rem
+    left: -2rem
     object-fit: cover
 </style>
