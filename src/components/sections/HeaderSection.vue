@@ -74,7 +74,6 @@ export default defineComponent({
     height: 100%
     object-fit: cover
   &__decoration
-    background: red
     width: 100%
     height: 100%
     top: 2rem
