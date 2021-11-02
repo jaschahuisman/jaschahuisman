@@ -63,6 +63,7 @@ export default defineComponent({
     line-height: 1.25em
     z-index: 1
     letter-spacing: -0.05rem
+    text-shadow: 1px 1px 0px white, 2px 2px 0px white, 3px 3px 0px white, 4px 4px 4px white, -1px -1px 0px white, -2px -2px 2px white
   &__image-wrapper
     position: relative
     display: block
@@ -73,6 +74,7 @@ export default defineComponent({
     width: 100%
     height: 100%
     object-fit: cover
+    object-position: 80%
   &__decoration
     width: 100%
     height: 100%

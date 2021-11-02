@@ -113,25 +113,28 @@ export default defineComponent({
   margin-bottom: 4rem
   @include media("<=1200px", ">phone")
     padding: 0 1.5rem
-  @include media("<=tablet", ">phone")
-    grid-template-columns: repeat(1, 1fr)
-    grid-gap: 4rem
-  @include media("<=400px")
+  @include media("<=tablet")
     grid-template-columns: repeat(1, 1fr)
     justify-content: center
     text-align: center
+    grid-gap: 5rem
+  @include media("<=tablet", ">phone")
+    grid-template-columns: repeat(1, 1fr)
+    width: 90%
+    margin: 0 auto
   &__section
     display: flex
     flex-direction: column
     &__title
       margin-bottom: 0.5rem
     &__paragraph:not(:last-child)
-      margin-bottom: 2.5rem
+      margin-bottom: 2rem
     &__icons
       display: flex
       align-items: center
-      @include media("<=400px")
+      @include media("<=tablet")
         justify-content: center
+        margin-bottom: 3rem
       &__icon
         width: 1.5rem
         height: 1.5rem
