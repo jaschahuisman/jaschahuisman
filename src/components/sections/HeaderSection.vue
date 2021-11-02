@@ -42,7 +42,6 @@ export default defineComponent({
       trigger: header,
       start: "90% center",
       end: "150% center",
-      markers: true,
       scrub: 1,
     };
     this.animateTo(title, { opacity: 0, x: -50, scrollTrigger });
