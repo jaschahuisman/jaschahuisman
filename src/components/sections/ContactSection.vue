@@ -19,12 +19,19 @@
             <h3 class="contact__card__subtitle">Creative developer</h3>
             <ul class="contact__card__list" role="list">
               <li class="contact__card__list__item" role="listitem">
-                <a href="tel:+31-06-11808827"> +31 6 11808827</a>
+                <a href="mailto:info@jaschahuisman.nl">
+                  <icon class="icon" icon="at" />
+                  info@jaschahuisman.nl
+                </a>
               </li>
               <li class="contact__card__list__item" role="listitem">
-                <a href="mailto:info@jaschahuisman.nl">info@jaschahuisman.nl</a>
+                <a href="tel:+31-06-11808827">
+                  <icon class="icon" icon="phone-alt" />
+                  +31 6 11808827
+                </a>
               </li>
               <li class="contact__card__list__item" role="listitem">
+                <icon class="icon" icon="city" />
                 Dordrecht, the Netherlands
               </li>
             </ul>
@@ -83,6 +90,9 @@ export default defineComponent({
       display: flex
       align-items: center
       margin-bottom: 0.5rem
+      .icon
+        margin-right: 1rem
+        color: #d7d7d7
   &__decoration
     top: 0
     width: 100%

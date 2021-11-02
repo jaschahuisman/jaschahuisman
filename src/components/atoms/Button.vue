@@ -11,6 +11,7 @@
       <Decoration class="button__decoration" />
       <span class="button__background"></span>
       <span class="button__text">
+        <icon v-if="icon" :icon="icon" />
         <slot />
       </span>
     </a>
@@ -45,6 +46,10 @@ export default defineComponent({
       default: function () {
         return "normal";
       },
+      required: false,
+    },
+    icon: {
+      type: String,
       required: false,
     },
     variant: {
