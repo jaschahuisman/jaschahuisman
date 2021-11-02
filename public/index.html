@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#ffffff" />
+	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+	<link rel="apple-touch-icon" href="<%= BASE_URL %>/logo192.png" />
+	<!-- Page title & description -->
+	<title>
+		<%= htmlWebpackPlugin.options.title %>
+	</title>
+	<meta name="description"
+		content="Creative developer & multimedia design expert based near Rotterdam, The Netherlands." />
+	<!-- SEO -->
+	<meta property="og:locale" content="en_GB" />
+	<meta name="author" content="Jascha Huisman" />
+	<meta property="og:url" content="http://www.jaschahuisman.nl" />
+	<meta property="og:title" content="Jascha Huisman – Creative development & design" />
+	<meta name="og:description"
+		content="Creative developer & multimedia design expert based near Rotterdam, The Netherlands." />
+	<meta name="tags"
+		content="jascha, huisman, dordrecht, breda, rotterdam, development, webdevelopment, backend-development, design, ui, ux, creative" />
+	<meta name="og:type" content="website" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6YLKXNGMM"></script>
+</head>
+
+<body>
+	<noscript>
+		<strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+				Please enable it to continue.</strong>
+	</noscript>
+	<div id="app"></div>
+</body>
+
 </html>

@@ -1,3 +1,4 @@
+l/* eslint-disable prettier/prettier */
 <template>
   <Container class="header-container">
     <Section class="header-section" id="header">
@@ -22,6 +23,7 @@
 import { defineComponent } from "vue";
 import Container from "@/components/wrappers/Container.vue";
 import Section from "@/components/wrappers/Section.vue";
+import Decoration from "@/components/atoms/Decoration.vue";
 import useAnimator from "@/components/hooks/useAnimator";
 
 export default defineComponent({
@@ -29,6 +31,7 @@ export default defineComponent({
   components: {
     Container,
     Section,
+    Decoration,
   },
   setup() {
     const { animateFrom, animateTo } = useAnimator();

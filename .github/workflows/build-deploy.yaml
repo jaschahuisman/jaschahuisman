@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - main
+      - migration
   pull_request:
     branches:
       - main
+      - migration
   workflow_dispatch:
 
 jobs:
