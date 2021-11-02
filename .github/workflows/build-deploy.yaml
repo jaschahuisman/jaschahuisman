@@ -44,4 +44,4 @@ jobs:
           server: jaschahuisman.nl
           username: autodeploy
           password: ${{ secrets.ftp_password }}
-          local-dir: ./build/
+          local-dir: ./dist/
