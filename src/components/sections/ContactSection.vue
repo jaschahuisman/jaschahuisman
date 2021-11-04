@@ -35,16 +35,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '@/components/wrappers/Container.vue';
-import Section from '@/components/wrappers/Section.vue';
 import Decoration from '@/components/atoms/Decoration.vue';
+
 export default defineComponent({
-  name: 'ContactSection',
-  components: {
-    Container,
-    Section,
-    Decoration,
-  },
+  components: { Decoration },
 });
 </script>
 

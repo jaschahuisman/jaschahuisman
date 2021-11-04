@@ -1,10 +1,10 @@
 <template>
-  <section class="section" role="group" ref="section">
+  <div class="section" role="group" ref="section">
     <h2 class="section__title" v-if="title" :style="titleOffset && 'margin-bottom:' + titleOffset">
       {{ title }}
     </h2>
     <slot />
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,16 +12,9 @@ import { defineComponent } from 'vue';
 import useAnimator from '@/hooks/useAnimator';
 
 export default defineComponent({
-  name: 'Section',
   props: {
-    title: {
-      type: String,
-      required: false,
-    },
-    titleOffset: {
-      type: String,
-      required: false,
-    },
+    title: String,
+    titleOffset: String,
     animate: {
       type: Boolean,
       default: true,

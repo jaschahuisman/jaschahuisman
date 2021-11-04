@@ -32,12 +32,7 @@ interface ITimelineData {
 }
 
 export default defineComponent({
-  name: 'TimelineSection',
-  components: {
-    Container,
-    Section,
-    TimelineItem,
-  },
+  components: { TimelineItem },
   data(): { timelineItems: ITimelineData[] } {
     return {
       timelineItems: [

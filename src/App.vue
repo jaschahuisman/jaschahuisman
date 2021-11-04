@@ -6,20 +6,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Navigation, { IMenuItem } from '@/components/molecules/Navigation.vue';
-import Footer from '@/components/molecules/Footer.vue';
+import Navigation, { IMenuItem } from '@/components/views/Navigation.vue';
+import Footer from '@/components/views/Footer.vue';
 import '@/styles/main.sass';
 
 export default defineComponent({
-  components: {
-    Navigation,
-    Footer,
-  },
+  components: { Navigation, Footer },
   data() {
     return {
       menu: [
-        { id: 0, label: 'About', href: '/#about' },
-        { id: 1, label: 'Contact', href: '/#contact' },
+        { label: 'About', href: '/#about' },
+        { label: 'Contact', href: '/#contact' },
       ] as IMenuItem[],
     };
   },

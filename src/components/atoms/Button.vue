@@ -28,37 +28,21 @@ interface IButtonProps {
 }
 
 export default defineComponent({
-  name: 'Button',
   components: {
     Decoration,
   },
   props: {
-    href: {
-      type: String,
-      required: false,
-    },
-    newTab: {
-      type: Boolean,
-      required: false,
-    },
     size: {
       type: String as PropType<IButtonProps['size']>,
-      default: function () {
-        return 'normal';
-      },
-      required: false,
-    },
-    icon: {
-      type: String,
-      required: false,
+      default: () => 'normal',
     },
     variant: {
       type: String as PropType<IButtonProps['variant']>,
-      required: false,
-      default: function () {
-        return 'secondary';
-      },
+      default: () => 'secondary',
     },
+    href: String,
+    newTab: Boolean,
+    icon: Array as PropType<string[]>,
   },
 });
 </script>

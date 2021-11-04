@@ -8,7 +8,7 @@
           role="listitem"
           v-for="menuItem in menu"
           :href="menuItem.href"
-          :key="menuItem.id"
+          :key="menu.indexOf(menuItem)"
           :title="menuItem.label"
         >
           {{ menuItem.label }}
@@ -20,20 +20,14 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import Container from '@/components/wrappers/Container.vue';
 import useAnimator from '@/hooks/useAnimator';
 
 export interface IMenuItem {
-  id: number;
   label: string;
   href: string;
 }
 
 export default defineComponent({
-  name: 'Navigation',
-  components: {
-    Container,
-  },
   props: {
     menu: {
       type: Object as PropType<Array<IMenuItem>>,

@@ -14,7 +14,6 @@ import { defineComponent } from 'vue';
 import useAnimator from '@/hooks/useAnimator';
 
 export default defineComponent({
-  name: 'TimelineItem',
   props: {
     title: { type: String, required: true },
     description: { type: String, required: true },

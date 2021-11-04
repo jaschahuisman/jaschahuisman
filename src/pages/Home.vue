@@ -17,7 +17,6 @@ import ContactSection from '@/components/sections/ContactSection.vue';
 import HeaderSection from '@/components/sections/HeaderSection.vue';
 
 export default defineComponent({
-  name: 'Home',
   components: {
     AboutSection,
     ExcerptSection,

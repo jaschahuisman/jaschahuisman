@@ -15,16 +15,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '@/components/wrappers/Container.vue';
-import Section from '@/components/wrappers/Section.vue';
 
-export default defineComponent({
-  name: 'AboutSection',
-  components: {
-    Container,
-    Section,
-  },
-});
+export default defineComponent({});
 </script>
 
 <style lang="sass" scoped>

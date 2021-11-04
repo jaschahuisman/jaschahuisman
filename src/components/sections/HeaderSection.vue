@@ -15,18 +15,11 @@ l/* eslint-disable prettier/prettier */
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '@/components/wrappers/Container.vue';
-import Section from '@/components/wrappers/Section.vue';
 import Decoration from '@/components/atoms/Decoration.vue';
 import useAnimator from '@/hooks/useAnimator';
 
 export default defineComponent({
-  name: 'HeaderSection',
-  components: {
-    Container,
-    Section,
-    Decoration,
-  },
+  components: { Decoration },
   setup() {
     const { animateFrom, animateTo } = useAnimator();
     return { animateFrom, animateTo };

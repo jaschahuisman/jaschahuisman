@@ -8,12 +8,10 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Container',
   props: {
     maxWidth: {
       type: String,
-      default: '900px',
-      required: false,
+      default: () => '900px',
     },
   },
 });
