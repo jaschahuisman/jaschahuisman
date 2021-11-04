@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="timeline-item"
-    ref="timelineItem"
-    :position="index % 2 === 0 ? 'left' : 'right'"
-  >
+  <div class="timeline-item" ref="timelineItem" :position="index % 2 === 0 ? 'left' : 'right'">
     <div class="timeline-item__date">{{ date }}</div>
     <img :src="image" :alt="title" class="timeline-item__image" />
     <div class="timeline-item__content">
@@ -14,11 +10,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import useAnimator from "@/components/hooks/useAnimator";
+import { defineComponent } from 'vue';
+import useAnimator from '@/hooks/useAnimator';
 
 export default defineComponent({
-  name: "TimelineItem",
+  name: 'TimelineItem',
   props: {
     title: { type: String, required: true },
     description: { type: String, required: true },
@@ -39,8 +35,8 @@ export default defineComponent({
       delay: this.index * 0.5,
       scrollTrigger: {
         trigger: element.parentElement,
-        start: "10% 50%",
-        end: "bottom top",
+        start: '10% 50%',
+        end: 'bottom top',
       },
     });
   },

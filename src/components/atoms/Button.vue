@@ -19,16 +19,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import Decoration from "@/components/atoms/Decoration.vue";
+import { defineComponent, PropType } from 'vue';
+import Decoration from '@/components/atoms/Decoration.vue';
 
 interface IButtonProps {
-  size: "small" | "normal";
-  variant: "primary" | "secondary";
+  size: 'small' | 'normal';
+  variant: 'primary' | 'secondary';
 }
 
 export default defineComponent({
-  name: "Button",
+  name: 'Button',
   components: {
     Decoration,
   },
@@ -42,9 +42,9 @@ export default defineComponent({
       required: false,
     },
     size: {
-      type: String as PropType<IButtonProps["size"]>,
+      type: String as PropType<IButtonProps['size']>,
       default: function () {
-        return "normal";
+        return 'normal';
       },
       required: false,
     },
@@ -53,10 +53,10 @@ export default defineComponent({
       required: false,
     },
     variant: {
-      type: String as PropType<IButtonProps["variant"]>,
+      type: String as PropType<IButtonProps['variant']>,
       required: false,
       default: function () {
-        return "secondary";
+        return 'secondary';
       },
     },
   },

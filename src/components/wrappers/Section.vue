@@ -1,10 +1,6 @@
 <template>
   <section class="section" role="group" ref="section">
-    <h2
-      class="section__title"
-      v-if="title"
-      :style="titleOffset && 'margin-bottom:' + titleOffset"
-    >
+    <h2 class="section__title" v-if="title" :style="titleOffset && 'margin-bottom:' + titleOffset">
       {{ title }}
     </h2>
     <slot />
@@ -12,11 +8,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import useAnimator from "@/components/hooks/useAnimator";
+import { defineComponent } from 'vue';
+import useAnimator from '@/hooks/useAnimator';
 
 export default defineComponent({
-  name: "Section",
+  name: 'Section',
   props: {
     title: {
       type: String,
@@ -45,8 +41,8 @@ export default defineComponent({
         scale: 0.95,
         scrollTrigger: {
           trigger: element,
-          start: "top 90%",
-          end: "60% 30%",
+          start: 'top 90%',
+          end: '60% 30%',
           scrub: true,
         },
       });

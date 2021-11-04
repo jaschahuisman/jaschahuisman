@@ -3,9 +3,7 @@ l/* eslint-disable prettier/prettier */
   <Container class="header-container">
     <Section class="header-section" id="header" :animate="false">
       <header class="header" role="banner" ref="header">
-        <span class="header__title" ref="headerTitle">
-          Design & development <br />intertwined
-        </span>
+        <span class="header__title" ref="headerTitle"> Design & development <br />intertwined </span>
         <span class="header__image-wrapper" ref="headerImage">
           <img class="header__image" src="@/assets/img/banner.jpg" />
           <Decoration class="header__decoration" />
@@ -16,14 +14,14 @@ l/* eslint-disable prettier/prettier */
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Container from "@/components/wrappers/Container.vue";
-import Section from "@/components/wrappers/Section.vue";
-import Decoration from "@/components/atoms/Decoration.vue";
-import useAnimator from "@/components/hooks/useAnimator";
+import { defineComponent } from 'vue';
+import Container from '@/components/wrappers/Container.vue';
+import Section from '@/components/wrappers/Section.vue';
+import Decoration from '@/components/atoms/Decoration.vue';
+import useAnimator from '@/hooks/useAnimator';
 
 export default defineComponent({
-  name: "HeaderSection",
+  name: 'HeaderSection',
   components: {
     Container,
     Section,
@@ -39,8 +37,8 @@ export default defineComponent({
     const image = this.$refs.headerImage as HTMLElement;
     const scrollTrigger = {
       trigger: header,
-      start: "90% center",
-      end: "150% center",
+      start: '90% center',
+      end: '150% center',
       scrub: 1,
     };
     this.animateTo(title, { opacity: 0, x: -50, scrollTrigger });

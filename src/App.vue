@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Navigation, { IMenuItem } from "@/components/molecules/Navigation.vue";
-import Footer from "@/components/molecules/Footer.vue";
-import "@/styles/main.sass";
+import { defineComponent } from 'vue';
+import Navigation, { IMenuItem } from '@/components/molecules/Navigation.vue';
+import Footer from '@/components/molecules/Footer.vue';
+import '@/styles/main.sass';
 
 export default defineComponent({
   components: {
@@ -18,8 +18,8 @@ export default defineComponent({
   data() {
     return {
       menu: [
-        { id: 0, label: "About", href: "/#about" },
-        { id: 1, label: "Contact", href: "/#contact" },
+        { id: 0, label: 'About', href: '/#about' },
+        { id: 1, label: 'Contact', href: '/#contact' },
       ] as IMenuItem[],
     };
   },

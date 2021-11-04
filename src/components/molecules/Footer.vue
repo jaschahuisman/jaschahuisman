@@ -4,8 +4,7 @@
       <section class="footer__section">
         <h3 class="footer__section__title">Interested in my work?</h3>
         <p class="footer__section__paragraph">
-          Did I make you curious about my work? View my complete portfolio and
-          follow my work!
+          Did I make you curious about my work? View my complete portfolio and follow my work!
         </p>
         <Button
           size="normal"
@@ -20,8 +19,7 @@
       <section class="footer__section">
         <h3 class="footer__section__title">I'm an open book.</h3>
         <p class="footer__section__paragraph">
-          I like to open source most of my projects, so that everyone can learn
-          something from my projects.
+          I like to open source most of my projects, so that everyone can learn something from my projects.
         </p>
         <Button
           size="normal"
@@ -35,8 +33,7 @@
       <section class="footer__section">
         <h3 class="footer__section__title">Let's connect.</h3>
         <p class="footer__section__paragraph">
-          Give me a call, or even a text message will work. Then we we'll talk
-          about what we can do for each other.
+          Give me a call, or even a text message will work. Then we we'll talk about what we can do for each other.
         </p>
         <div class="footer__section__icons">
           <a
@@ -57,12 +54,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Button from "@/components/atoms/Button.vue";
-import Container from "@/components/wrappers/Container.vue";
+import { defineComponent } from 'vue';
+import Button from '@/components/atoms/Button.vue';
+import Container from '@/components/wrappers/Container.vue';
 
 export default defineComponent({
-  name: "Footer",
+  name: 'Footer',
   components: {
     Button,
     Container,
@@ -71,31 +68,31 @@ export default defineComponent({
     return {
       icons: [
         {
-          id: "linkedin",
-          href: "https://www.linkedin.com/in/jaschahuisman",
-          icon: ["fab", "linkedin-in"],
-          color: "#2867B2",
-          title: "LinkedIn",
+          id: 'linkedin',
+          href: 'https://www.linkedin.com/in/jaschahuisman',
+          icon: ['fab', 'linkedin-in'],
+          color: '#2867B2',
+          title: 'LinkedIn',
         },
         {
-          id: "whatsapp",
-          href: "https://wa.me/+31611808827?text=Hi%20Jascha!&lang=en",
-          icon: ["fab", "whatsapp"],
-          color: "#25D366",
-          title: "Whatsapp",
+          id: 'whatsapp',
+          href: 'https://wa.me/+31611808827?text=Hi%20Jascha!&lang=en',
+          icon: ['fab', 'whatsapp'],
+          color: '#25D366',
+          title: 'Whatsapp',
         },
         {
-          id: "instagram",
-          href: "https://www.instagram.com/jaschahuisman",
-          icon: ["fab", "instagram"],
-          color: "#E1306C",
-          title: "Instagram",
+          id: 'instagram',
+          href: 'https://www.instagram.com/jaschahuisman',
+          icon: ['fab', 'instagram'],
+          color: '#E1306C',
+          title: 'Instagram',
         },
         {
-          id: "github",
-          href: "https://www.github.com/jaschahuisman",
-          icon: ["fab", "github"],
-          title: "Github",
+          id: 'github',
+          href: 'https://www.github.com/jaschahuisman',
+          icon: ['fab', 'github'],
+          title: 'Github',
         },
       ],
     };

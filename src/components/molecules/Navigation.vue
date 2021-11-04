@@ -19,9 +19,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import Container from "@/components/wrappers/Container.vue";
-import useAnimator from "@/components/hooks/useAnimator";
+import { defineComponent, PropType } from 'vue';
+import Container from '@/components/wrappers/Container.vue';
+import useAnimator from '@/hooks/useAnimator';
 
 export interface IMenuItem {
   id: number;
@@ -30,7 +30,7 @@ export interface IMenuItem {
 }
 
 export default defineComponent({
-  name: "Navigation",
+  name: 'Navigation',
   components: {
     Container,
   },
@@ -46,7 +46,7 @@ export default defineComponent({
   },
   mounted() {
     const element = this.$refs.navigation as HTMLElement;
-    const options = { opacity: 0, duration: 1.5, y: -100, ease: "power3.Out" };
+    const options = { opacity: 0, duration: 1.5, y: -100, ease: 'power3.Out' };
     this.animateFrom(element, options);
   },
 });

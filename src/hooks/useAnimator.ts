@@ -1,5 +1,5 @@
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 interface IUseAnimator {
   animateFrom(element: gsap.TweenTarget, options?: gsap.TweenVars): void;

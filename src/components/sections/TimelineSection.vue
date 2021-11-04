@@ -1,11 +1,6 @@
 <template>
   <Container class="timeline-container">
-    <Section
-      class="timeline-section"
-      id="timeline"
-      title="My skill-development-timeline"
-      titleOffset="3rem"
-    >
+    <Section class="timeline-section" id="timeline" title="My skill-development-timeline" titleOffset="3rem">
       <div class="timeline" ref="timeline">
         <span class="timeline__root" ref="timelineRoot" />
         <TimelineItem
@@ -23,11 +18,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Container from "@/components/wrappers/Container.vue";
-import Section from "@/components/wrappers/Section.vue";
-import TimelineItem from "@/components/molecules/TimelineItem.vue";
-import useAnimator from "../hooks/useAnimator";
+import { defineComponent } from 'vue';
+import Container from '@/components/wrappers/Container.vue';
+import Section from '@/components/wrappers/Section.vue';
+import TimelineItem from '@/components/molecules/TimelineItem.vue';
+import useAnimator from '@/hooks/useAnimator';
 
 interface ITimelineData {
   title: string;
@@ -37,7 +32,7 @@ interface ITimelineData {
 }
 
 export default defineComponent({
-  name: "TimelineSection",
+  name: 'TimelineSection',
   components: {
     Container,
     Section,
@@ -47,24 +42,22 @@ export default defineComponent({
     return {
       timelineItems: [
         {
-          title: "Avans University of Applied Sciences",
-          date: "2019",
-          description:
-            "Propaedeutic year Bachelor Communication and Multimedia Design",
-          image: require("@/assets/img/avans.png"),
+          title: 'Avans University of Applied Sciences',
+          date: '2019',
+          description: 'Propaedeutic year Bachelor Communication and Multimedia Design',
+          image: require('@/assets/img/avans.png'),
         },
         {
-          title: "Handpicked Agencies",
-          date: "2020",
-          description:
-            "Tech elaboration internship & freelance at Handpicked Labs innovation centre",
-          image: require("@/assets/svg/handpicked.svg"),
+          title: 'Handpicked Agencies',
+          date: '2020',
+          description: 'Tech elaboration internship & freelance at Handpicked Labs innovation centre',
+          image: require('@/assets/svg/handpicked.svg'),
         },
         {
-          title: "University of the Arts Utrecht",
-          date: "2021",
-          description: "Minor Extended Reality",
-          image: require("@/assets/svg/hku.svg"),
+          title: 'University of the Arts Utrecht',
+          date: '2021',
+          description: 'Minor Extended Reality',
+          image: require('@/assets/svg/hku.svg'),
         },
       ],
     };
@@ -81,8 +74,8 @@ export default defineComponent({
       duration: 1,
       scrollTrigger: {
         trigger: timelineElement,
-        start: "top 50%",
-        end: "bottom 50%",
+        start: 'top 50%',
+        end: 'bottom 50%',
         scrub: true,
       },
     });

@@ -1,22 +1,18 @@
 <template>
-  <div
-    class="container"
-    role="group"
-    :style="maxWidth && 'max-width:' + maxWidth"
-  >
+  <div class="container" role="group" :style="maxWidth && 'max-width:' + maxWidth">
     <slot />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Container",
+  name: 'Container',
   props: {
     maxWidth: {
       type: String,
-      default: "900px",
+      default: '900px',
       required: false,
     },
   },

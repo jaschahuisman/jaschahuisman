@@ -1,18 +1,9 @@
 <template>
   <Container class="contact-container">
-    <Section
-      class="contact-section"
-      id="contact"
-      title="Feel free to reach out"
-      titleOffset="3rem"
-    >
+    <Section class="contact-section" id="contact" title="Feel free to reach out" titleOffset="3rem">
       <div class="contact">
         <div class="contact__card" role="group">
-          <img
-            src="@/assets/img/avatar.webp"
-            alt="Avatar"
-            class="contact__card__image"
-          />
+          <img src="@/assets/img/avatar.webp" alt="Avatar" class="contact__card__image" />
           <Decoration class="contact__card__decoration" />
           <div class="contact__card__info-wrapper">
             <h3 class="contact__card__title">Jascha Huisman</h3>
@@ -43,12 +34,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Container from "@/components/wrappers/Container.vue";
-import Section from "@/components/wrappers/Section.vue";
-import Decoration from "@/components/atoms/Decoration.vue";
+import { defineComponent } from 'vue';
+import Container from '@/components/wrappers/Container.vue';
+import Section from '@/components/wrappers/Section.vue';
+import Decoration from '@/components/atoms/Decoration.vue';
 export default defineComponent({
-  name: "ContactSection",
+  name: 'ContactSection',
   components: {
     Container,
     Section,

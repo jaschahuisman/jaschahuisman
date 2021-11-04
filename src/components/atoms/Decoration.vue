@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 export default defineComponent({
-  name: "Decoration",
+  name: 'Decoration',
   data() {
     return {
-      image: require("@/assets/svg/decoration.svg"),
+      image: require('@/assets/svg/decoration.svg'),
     };
   },
 });
