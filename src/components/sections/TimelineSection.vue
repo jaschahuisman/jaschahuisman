@@ -19,8 +19,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Container from '@/components/wrappers/Container.vue';
-import Section from '@/components/wrappers/Section.vue';
 import TimelineItem from '@/components/molecules/TimelineItem.vue';
 import useAnimator from '@/hooks/useAnimator';
 
