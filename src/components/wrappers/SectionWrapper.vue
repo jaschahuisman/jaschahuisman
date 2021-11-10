@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  defineProps<{ title?: string; titleOffset?: string }>();
+defineProps<{ title?: string; titleOffset?: string }>();
 </script>
 
 <template>
@@ -16,11 +16,11 @@
 </template>
 
 <style scoped lang="sass">
-  .section
-    padding: 4rem 0
-    &__title
-      margin-bottom: 1rem
-      font-size: 1.75rem
-      font-weight: 600
-      text-align: center
+.section
+  padding: 4rem 0
+  &__title
+    margin-bottom: 1rem
+    font-size: 1.75rem
+    font-weight: 600
+    text-align: center
 </style>

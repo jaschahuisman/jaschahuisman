@@ -1,6 +1,6 @@
 lea
 <script setup lang="ts">
-  defineProps<{ label: string; href: string }>();
+defineProps<{ label: string; href: string }>();
 </script>
 
 <template>
@@ -10,11 +10,11 @@ lea
 </template>
 
 <style scoped lang="sass">
-  .menu-item
-    display: block
-    margin-left: 1rem
-    padding: 2rem 1rem
-    color: gray
-    cursor: pointer
-    transition: 300ms
+.menu-item
+  display: block
+  margin-left: 1rem
+  padding: 2rem 1rem
+  color: gray
+  cursor: pointer
+  transition: 300ms
 </style>

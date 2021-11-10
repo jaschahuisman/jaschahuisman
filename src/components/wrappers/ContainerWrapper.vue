@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  defineProps<{ maxWidth?: string }>();
+defineProps<{ maxWidth?: string }>();
 </script>
 
 <template>
@@ -13,8 +13,8 @@
 </template>
 
 <style scoped lang="sass">
-  .container
-      max-width: 900px
-      margin: 0 auto
-      padding: 0 1rem
+.container
+    max-width: 900px
+    margin: 0 auto
+    padding: 0 1rem
 </style>

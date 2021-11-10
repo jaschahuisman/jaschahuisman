@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-  import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
+import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
+import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
 </script>
 
 <template>
@@ -29,16 +29,16 @@
 </template>
 
 <style scoped lang="sass">
-  @import "@/styles/_media.scss"
-  .about
-    &__paragraph
-      width: 80%
-      margin-bottom: 4rem
-      @include media('<=tablet')
-        width: 100%
-    &__image
-      display: block
+@import "@/styles/_media.scss"
+.about
+  &__paragraph
+    width: 80%
+    margin-bottom: 4rem
+    @include media('<=tablet')
       width: 100%
-      height: 400px
-      object-fit: cover
+  &__image
+    display: block
+    width: 100%
+    height: 400px
+    object-fit: cover
 </style>

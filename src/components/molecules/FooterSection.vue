@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  defineProps<{ title: string; text: string }>();
+defineProps<{ title: string; text: string }>();
 </script>
 
 <template>
@@ -10,11 +10,11 @@
 </template>
 
 <style scoped lang="sass">
-  .footer-section
-    display: flex
-    flex-direction: column
-    &__title
-        margin-bottom: 0.5rem
-    &__paragraph:not(:last-child)
-        margin-bottom: 2rem
+.footer-section
+  display: flex
+  flex-direction: column
+  &__title
+      margin-bottom: 0.5rem
+  &__paragraph:not(:last-child)
+      margin-bottom: 2rem
 </style>

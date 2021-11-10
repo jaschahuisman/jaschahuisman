@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import MenuItem from "@/components/atoms/MenuItem.vue";
-  import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-  defineProps<{ menuItems: Array<{ label: string; href: string }> }>();
+import MenuItem from "@/components/atoms/MenuItem.vue";
+import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
+defineProps<{ menuItems: Array<{ label: string; href: string }> }>();
 </script>
 
 <template>
@@ -21,41 +21,41 @@
 </template>
 
 <style scoped lang="sass">
-  @import "@/styles/_media.scss"
-  @import "@/styles/_colors.sass"
-  .navigation
-    display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: space-between
-    height: 8rem
-    width: 100%
+@import "@/styles/_media.scss"
+@import "@/styles/_colors.sass"
+.navigation
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  height: 8rem
+  width: 100%
+  font-size: 1.2rem
+  @include media("<=tablet")
+    flex-direction: column
+    justify-content: center
+  &__logo
     font-size: 1.2rem
-    @include media("<=tablet")
-      flex-direction: column
-      justify-content: center
-    &__logo
-      font-size: 1.2rem
-      color: $darkGray
+    color: $darkGray
+    display: block
+    font-weight: 700
+    transition: 300ms
+    &:hover
+      color: $color-black
+    @include media('<=tablet')
+      padding: 1rem 0
+  &__menu
+    display: flex
+    &__item
       display: block
-      font-weight: 700
+      margin-left: 1rem
+      padding: 2rem 1rem
+      color: $midGray
+      cursor: pointer
       transition: 300ms
-      &:hover
-        color: $color-black
-      @include media('<=tablet')
+      @include media("<=tablet")
         padding: 1rem 0
-    &__menu
-      display: flex
-      &__item
-        display: block
-        margin-left: 1rem
-        padding: 2rem 1rem
-        color: $midGray
-        cursor: pointer
-        transition: 300ms
-        @include media("<=tablet")
-          padding: 1rem 0
-          margin: 0 1rem
-        &:hover, &--active
-          color: $color-black
+        margin: 0 1rem
+      &:hover, &--active
+        color: $color-black
 </style>

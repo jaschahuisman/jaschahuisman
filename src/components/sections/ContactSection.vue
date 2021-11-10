@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-  import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
-  import Decoration from "@/components/atoms/Decoration.vue";
+import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
+import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
+import Decoration from "@/components/atoms/Decoration.vue";
 </script>
 
 <template>
@@ -49,48 +49,48 @@
 </template>
 
 <style scoped lang="sass">
-  @import '@/styles/_media.scss'
-  .contact__card
-    position: relative
-    display: flex
-    padding: 2em
-    max-width: 500px
-    margin: 0 auto
-    &__image
-      object-fit: cover
-      height: 100px
-      width: 100px
-      border-radius: 100%
-      margin-right: 2rem
-      margin-bottom: 2rem
-    &__title
-      font-family: "Ubuntu",sans-serif
-      font-size: 1.75rem
-      margin-bottom: 0.5rem
-    &__subtitle
-      font-family: "Ubuntu",sans-serif
-      font-size: 1.25rem
-      font-weight: 400
-      margin-bottom: 1rem
-      color: #878787
-    &__list
-      padding: 0
-      &__item
-        line-height: 1.5rem
-        vertical-align: middle
-        display: flex
-        align-items: center
-        margin-bottom: 0.5rem
-        .icon
-          margin-right: 1rem
-          color: #d7d7d7
-    &__decoration
-      top: 0
-      width: 100%
-      height: 100%
-      left: 50%
-    @include media("<=tablet")
-      flex-direction: column
+@import '@/styles/_media.scss'
+.contact__card
+  position: relative
+  display: flex
+  padding: 2em
+  max-width: 500px
+  margin: 0 auto
+  &__image
+    object-fit: cover
+    height: 100px
+    width: 100px
+    border-radius: 100%
+    margin-right: 2rem
+    margin-bottom: 2rem
+  &__title
+    font-family: "Ubuntu",sans-serif
+    font-size: 1.75rem
+    margin-bottom: 0.5rem
+  &__subtitle
+    font-family: "Ubuntu",sans-serif
+    font-size: 1.25rem
+    font-weight: 400
+    margin-bottom: 1rem
+    color: #878787
+  &__list
+    padding: 0
+    &__item
+      line-height: 1.5rem
+      vertical-align: middle
+      display: flex
       align-items: center
-      justify-content: center
+      margin-bottom: 0.5rem
+      .icon
+        margin-right: 1rem
+        color: #d7d7d7
+  &__decoration
+    top: 0
+    width: 100%
+    height: 100%
+    left: 50%
+  @include media("<=tablet")
+    flex-direction: column
+    align-items: center
+    justify-content: center
 </style>

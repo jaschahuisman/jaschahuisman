@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-  import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
-  import Decoration from "../atoms/Decoration.vue";
+import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
+import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
+import Decoration from "../atoms/Decoration.vue";
 </script>
 
 <template>
@@ -21,17 +21,17 @@
 </template>
 
 <style scoped lang="sass">
-  @import '@/styles/_media.scss'
-  .excerpt
-    position: relative
-    &__decoration
-      right: 50%
-      top: 0
-    &__text
-      line-height: 2em
-      font-size: 2.25rem
-      font-weight: 600
-      @include media('<=tablet')
-        text-align: center
-        line-height: 1.5em
+@import '@/styles/_media.scss'
+.excerpt
+  position: relative
+  &__decoration
+    right: 50%
+    top: 0
+  &__text
+    line-height: 2em
+    font-size: 2.25rem
+    font-weight: 600
+    @include media('<=tablet')
+      text-align: center
+      line-height: 1.5em
 </style>

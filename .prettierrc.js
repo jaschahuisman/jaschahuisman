@@ -8,5 +8,5 @@ module.exports = {
   arrowParens: "always",
   printWidth: 80,
   endOfLine: "crlf",
-  vueIndentScriptAndStyle: true,
+  vueIndentScriptAndStyle: false,
 };
