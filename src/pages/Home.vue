@@ -4,7 +4,6 @@ import ContactSection from "@/components/sections/ContactSection.vue";
 import ExcerptSection from "@/components/sections/ExcerptSection.vue";
 import HeaderSection from "@/components/sections/HeaderSection.vue";
 import TimelineSection from "@/components/sections/TimelineSection.vue";
-import { timelineItems } from "@/content/timeline";
 </script>
 
 <template>
@@ -12,7 +11,7 @@ import { timelineItems } from "@/content/timeline";
     <header-section />
     <excerpt-section />
     <about-section />
-    <timeline-section :timeline-items="timelineItems" />
+    <timeline-section />
     <contact-section />
   </main>
 </template>

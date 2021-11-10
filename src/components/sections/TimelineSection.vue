@@ -1,15 +1,8 @@
 <script setup lang="ts">
 import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
-import TimelineItem from "../molecules/TimelineItem.vue";
-defineProps<{
-  timelineItems: Array<{
-    title: string;
-    description: string;
-    date: string;
-    image: string;
-  }>;
-}>();
+import Timeline from "@/components/molecules/Timeline.vue";
+import { timelineItems } from "@/content/timeline";
 </script>
 
 <template>
@@ -20,48 +13,7 @@ defineProps<{
       title="My skill-development-timeline"
       title-offset="3rem"
     >
-      <div ref="timeline" class="timeline">
-        <span ref="timelineStem" class="timeline__stem" />
-        <timeline-item
-          v-for="(timelineItem, index) in timelineItems"
-          :key="index"
-          :index="index"
-          :title="timelineItem.title"
-          :description="timelineItem.description"
-          :date="timelineItem.date"
-          :image="timelineItem.image"
-        />
-      </div>
+      <timeline :timeline-items="timelineItems" />
     </section-wrapper>
   </container-wrapper>
 </template>
-
-<style scoped lang="sass">
-@import "@/styles/_media.scss"
-@import "@/styles/_colors.sass"
-.timeline
-  position: relative
-  &__stem
-    position: absolute
-    z-index: -1
-    left: 50%
-    width: 2px
-    height: 100%
-    background-color: $black
-    &::before, &::after
-      content: ""
-      position: absolute
-      height: 0.75rem
-      width: 0.75rem
-      background-color: $color-black
-      border-radius: 50%
-      left: calc(-0.35rem + 1px)
-    &::before
-      top: -0.75rem
-    &::after
-      bottom: 0
-    @include media('<=tablet')
-      left: 5rem
-    @include media('<=phone')
-      left: 3.5rem
-</style>
