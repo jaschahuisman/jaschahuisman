@@ -1,88 +1,80 @@
+<script setup lang="ts">
+  import Decoration from "./Decoration.vue";
+  interface IButtonProps {
+    size?: "small" | "normal";
+    variant?: "primary" | "secondary";
+    href?: string;
+    newTab?: boolean;
+  }
+
+  const props = withDefaults(defineProps<IButtonProps>(), {
+    size: "normal",
+    variant: "secondary",
+    href: undefined,
+    newTab: false,
+  });
+
+  function className(base: string) {
+    const { size, variant } = props;
+    return `${base} ${base}--${size} ${base}--${variant}`;
+  }
+</script>
+
 <template>
   <div class="button-wrapper">
     <a
-      class="button"
-      :class="`button--${size} button--${variant}`"
-      role="button"
       :href="href"
-      :target="newTab ? '_blank' : null"
-      :rel="newTab ? 'noreferrer noopener' : null"
+      :target="newTab ? '_blank' : undefined"
+      :rel="newTab ? 'noreferrer noopener' : undefined"
+      :class="`button button--${size} button--${variant}`"
     >
-      <Decoration class="button__decoration" />
-      <span class="button__background"></span>
-      <span class="button__text">
-        <icon v-if="icon" :icon="icon" />
+      <decoration :class="className('button__decoration')" />
+      <span :class="className('button__background')" />
+      <span :class="className('button__text')">
         <slot />
       </span>
     </a>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import Decoration from '@/components/atoms/Decoration.vue';
-
-interface IButtonProps {
-  size: 'small' | 'normal';
-  variant: 'primary' | 'secondary';
-}
-
-export default defineComponent({
-  components: {
-    Decoration,
-  },
-  props: {
-    size: {
-      type: String as PropType<IButtonProps['size']>,
-      default: () => 'normal',
-    },
-    variant: {
-      type: String as PropType<IButtonProps['variant']>,
-      default: () => 'secondary',
-    },
-    href: String,
-    newTab: Boolean,
-    icon: Array as PropType<string[]>,
-  },
-});
-</script>
-
 <style lang="sass">
-.button
-  position: relative
-  display: inline-flex
-  align-items: center
-  justify-content: center
-  text-align: center
-  padding: 1.25rem 2rem
-  font-family: "Montserrat", sans-serif
-  transition: 300ms
-  &:hover
-    transform: translate(2px, 2px)
-    .button__decoration
-      transform: translate(-5px, -5px)
-  svg
-    margin-right: 0.5em
-  &__decoration
-    height: 100%
-    width: 100%
+  .button
+    position: relative
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    padding: 1.25rem 2rem
+    font-family: "Montserrat", sans-serif
     transition: 300ms
-    transform: translate(-10px, -10px)
-  &__background
-    position: absolute
-    height: 100%
-    width: 100%
-    z-index: -1
-  &--normal
-    font-size: 1rem
-  &--small
-    font-size: 0.8rem
-  &--primary
-    color: #f1e6ff
-    .button__background
-      background-color: #411e94
-  &--secondary
-    color: #411e94
-    .button__background
-      background-color: #f1e6ff
+    cursor: pointer
+    &:hover
+      transform: translate(2px, 2px)
+      .button__decoration
+        transform: translate(-5px, -5px)
+    svg
+      margin-right: 0.5em
+    &__decoration
+      opacity: 1
+      height: 100%
+      width: 100%
+      transition: 300ms
+      transform: translate(-10px, -10px)
+    &__background
+      position: absolute
+      height: 100%
+      width: 100%
+      z-index: -1
+    &--normal
+      font-size: 1rem
+    &--small
+      font-size: 0.8rem
+    &--primary
+      color: #f1e6ff
+      .button__background
+        background-color: #411e94
+    &--secondary
+      color: #411e94
+      .button__background
+        background-color: #f1e6ff
 </style>
