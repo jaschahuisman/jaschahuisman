@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import gsap from "@/vendors/gsap";
+import { onMounted } from "vue";
 import TimelineItem from "@/components/atoms/TimelineItem.vue";
+
 defineProps<{
   timelineItems: Array<{
     title: string;
@@ -8,20 +12,59 @@ defineProps<{
     image: string;
   }>;
 }>();
+
+const timelineRef = ref(null);
+const timelineStemRef = ref(null);
+const timelineElements: Array<Element | unknown> = [];
+
+onMounted(() => {
+  const timelineElement = timelineRef.value;
+  const timelineStemElement = timelineStemRef.value;
+  const trigger = {
+    trigger: timelineElement,
+    start: "top 50%",
+    end: "bottom 50%",
+  };
+  gsap.from(timelineElements, {
+    opacity: 0,
+    y: -70,
+    duration: 1.5,
+    stagger: 0.3,
+    ease: "power2.out",
+    scrollTrigger: {
+      ...trigger,
+      toggleActions: "play none none reverse",
+    },
+  });
+  gsap.from(timelineStemElement, {
+    opacity: 0,
+    height: 0,
+    duration: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      ...trigger,
+      scrub: true,
+    },
+  });
+});
 </script>
 
 <template>
-  <div class="timeline">
-    <span class="timeline__stem" />
-    <timeline-item
+  <div ref="timelineRef" class="timeline">
+    <span ref="timelineStemRef" class="timeline__stem" />
+    <div
       v-for="(timelineItem, index) in timelineItems"
       :key="index"
-      :index="index"
-      :title="timelineItem.title"
-      :description="timelineItem.description"
-      :date="timelineItem.date"
-      :image="timelineItem.image"
-    />
+      :ref="(timelineElement) => timelineElements.push(timelineElement)"
+    >
+      <timeline-item
+        :index="index"
+        :title="timelineItem.title"
+        :description="timelineItem.description"
+        :date="timelineItem.date"
+        :image="timelineItem.image"
+      />
+    </div>
   </div>
 </template>
 

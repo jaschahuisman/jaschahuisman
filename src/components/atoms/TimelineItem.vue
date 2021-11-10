@@ -38,6 +38,7 @@ function className(base: string): string {
   width: 100%
   &__date
     @include middle
+    font-family: 'Montserrat', sans-serif
     font-size: 0.9rem
     font-weight: 500
     color: $midGray
