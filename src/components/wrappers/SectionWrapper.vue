@@ -1,5 +1,8 @@
 <script setup lang="ts">
-defineProps<{ title?: string; titleOffset?: string }>();
+withDefaults(
+  defineProps<{ title?: string; titleOffset?: string; animate?: boolean }>(),
+  { title: undefined, titleOffset: undefined, animate: true },
+);
 </script>
 
 <template>
