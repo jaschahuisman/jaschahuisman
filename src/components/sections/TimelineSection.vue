@@ -21,7 +21,7 @@ defineProps<{
       title-offset="3rem"
     >
       <div ref="timeline" class="timeline">
-        <span ref="timelineRoot" class="timeline__root" />
+        <span ref="timelineStem" class="timeline__stem" />
         <timeline-item
           v-for="(timelineItem, index) in timelineItems"
           :key="index"
@@ -41,7 +41,7 @@ defineProps<{
 @import "@/styles/_colors.sass"
 .timeline
   position: relative
-  &__root
+  &__stem
     position: absolute
     z-index: -1
     left: 50%
