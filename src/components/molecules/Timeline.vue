@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TimelineItem from "./TimelineItem.vue";
+import TimelineItem from "@/components/atoms/TimelineItem.vue";
 defineProps<{
   timelineItems: Array<{
     title: string;
