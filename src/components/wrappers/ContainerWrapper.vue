@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
   .container
       max-width: 900px
       margin: 0 auto

@@ -2,7 +2,7 @@
   <span class="decoration" />
 </template>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
   .decoration
       position: absolute
       display: block

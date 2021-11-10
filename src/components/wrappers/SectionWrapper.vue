@@ -15,7 +15,7 @@
   </section>
 </template>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
   .section
     padding: 4rem 0
     &__title

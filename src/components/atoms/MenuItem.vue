@@ -9,7 +9,7 @@ lea
   </a>
 </template>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
   .menu-item
     display: block
     margin-left: 1rem
