@@ -1,6 +1,6 @@
 import AvansImage from "@/assets/timeline/avans.png";
-import HandpickedImage from "@/assets/timeline/handpicked.svg";
-import HkuImage from "@/assets/timeline/hku.svg";
+import HandpickedImage from "@/assets/timeline/handpicked.svg?url";
+import HkuImage from "@/assets/timeline/hku.svg?url";
 
 export const timelineItems: Array<{
   title: string;
