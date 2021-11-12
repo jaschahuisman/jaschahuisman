@@ -1,18 +1,45 @@
 <script setup lang="ts">
+import { ref, onMounted } from "@vue/runtime-core";
+import gsap from "@/vendors/gsap";
 import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 import FooterSection from "@/components/molecules/FooterSection.vue";
+
 defineProps<{ footerSections: Array<{ title: string; text: string }> }>();
+
+const footerRef = ref(null);
+const footerElements: Array<Element | unknown> = [];
+
+onMounted(() => {
+  const footerElement = footerRef.value;
+  gsap.from(footerElements, {
+    opacity: 0,
+    duration: 1,
+    y: 10,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: footerElement,
+      start: "top 90%",
+      end: "bottom 90%",
+      toggleActions: "play none none reverse",
+    },
+  });
+});
 </script>
 
 <template>
   <container-wrapper class="footer-container" max-width="1200px">
-    <footer class="footer">
-      <footer-section
+    <footer ref="footerRef" class="footer">
+      <div
         v-for="(footerSection, index) in footerSections"
         :key="index"
-        :title="footerSection.title"
-        :text="footerSection.text"
-      ></footer-section>
+        :ref="(footerElement) => footerElements.push(footerElement)"
+      >
+        <footer-section
+          :title="footerSection.title"
+          :text="footerSection.text"
+        />
+      </div>
     </footer>
   </container-wrapper>
 </template>
