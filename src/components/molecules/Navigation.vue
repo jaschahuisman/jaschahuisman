@@ -1,12 +1,28 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
+import gsap from "@/vendors/gsap";
 import MenuItem from "@/components/atoms/MenuItem.vue";
 import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
+
 defineProps<{ menuItems: Array<{ label: string; href: string }> }>();
+
+const navigationRef = ref(null);
+
+onMounted(() => {
+  const navigationElement = navigationRef.value;
+  gsap.from(navigationElement, {
+    opacity: 0,
+    duration: 2,
+    ease: "power3.out",
+    delay: 0.3,
+    y: -100,
+  });
+});
 </script>
 
 <template>
   <container-wrapper class="navigation-container">
-    <nav class="navigation" role="navigation">
+    <nav ref="navigationRef" class="navigation" role="navigation">
       <a class="navigation__logo" title="Home" href="/">Jascha Huisman</a>
       <div class="navigation__menu" role="list">
         <menu-item
