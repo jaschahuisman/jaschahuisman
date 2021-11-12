@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import gsap from "@/vendors/gsap";
-import { onMounted } from "vue";
 import TimelineItem from "@/components/atoms/TimelineItem.vue";
 
 defineProps<{
