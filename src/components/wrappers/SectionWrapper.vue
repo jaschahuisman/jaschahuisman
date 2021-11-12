@@ -14,8 +14,8 @@ onMounted(() => {
   if (props.animate === true) {
     gsap.from(sectionElement, {
       opacity: 0,
-      y: 80,
-      scale: 0.95,
+      y: 10,
+      scale: 0.97,
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {
