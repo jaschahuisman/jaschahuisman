@@ -3,9 +3,10 @@ import { ref, onMounted } from "@vue/runtime-core";
 import gsap from "@/vendors/gsap";
 import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 import FooterSection from "@/components/molecules/FooterSection.vue";
-import Button from "@/components/atoms/Button.vue";
 
 defineProps<{
+  // Todo: fix any type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   footerSections: Array<{ title: string; text: string; component: any }>;
 }>();
 

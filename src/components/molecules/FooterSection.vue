@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// Todo: fix any type
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const props = defineProps<{ title: string; text: string; component?: any }>();
 console.log(props.component);
 </script>
