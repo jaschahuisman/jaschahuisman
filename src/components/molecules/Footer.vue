@@ -3,8 +3,11 @@ import { ref, onMounted } from "@vue/runtime-core";
 import gsap from "@/vendors/gsap";
 import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 import FooterSection from "@/components/molecules/FooterSection.vue";
+import Button from "@/components/atoms/Button.vue";
 
-defineProps<{ footerSections: Array<{ title: string; text: string }> }>();
+defineProps<{
+  footerSections: Array<{ title: string; text: string; component: any }>;
+}>();
 
 const footerRef = ref(null);
 const footerElements: Array<Element | unknown> = [];
@@ -14,8 +17,9 @@ onMounted(() => {
   gsap.from(footerElements, {
     opacity: 0,
     duration: 1,
-    y: 10,
-    stagger: 0.2,
+    delay: 0.5,
+    y: 20,
+    stagger: 0.3,
     ease: "power2.out",
     scrollTrigger: {
       trigger: footerElement,
@@ -38,6 +42,7 @@ onMounted(() => {
         <footer-section
           :title="footerSection.title"
           :text="footerSection.text"
+          :component="footerSection.component"
         />
       </div>
     </footer>
