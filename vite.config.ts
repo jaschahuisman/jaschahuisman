@@ -13,7 +13,6 @@ export default defineConfig({
     vue(),
     svgLoader(),
     Component({
-      dts: true,
       resolvers: [IconsResolver({ prefix: "icon" })],
     }),
     Icons({ compiler: "vue3" }),
