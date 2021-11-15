@@ -52,14 +52,19 @@ function className(base: string) {
     transform: translate(2px, 2px)
     .button__decoration
       transform: translate(-5px, -5px)
-  svg
-    margin-right: 0.5em
   &__decoration
     opacity: 1
     height: 100%
     width: 100%
     transition: 300ms
     transform: translate(-10px, -10px)
+  &__text
+    display: flex
+    align-items: center
+    svg:first-child
+      margin-right: 0.5rem
+    svg:not(:first-child)
+      margin-left: 0.5rem
   &__background
     position: absolute
     height: 100%
