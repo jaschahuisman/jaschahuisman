@@ -7,7 +7,7 @@ import FooterSection from "@/components/molecules/FooterSection.vue";
 defineProps<{
   // Todo: fix any type
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  footerSections: Array<{ title: string; text: string; component: any }>;
+  footerSections: Array<{ title: string; text: string; component?: any }>;
 }>();
 
 const footerRef = ref(null);
