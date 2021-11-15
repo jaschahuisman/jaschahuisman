@@ -18,8 +18,8 @@ onMounted(() => {
   gsap.from(footerElements, {
     opacity: 0,
     duration: 1,
-    delay: 0.5,
-    y: 20,
+    delay: 0.2,
+    y: -20,
     stagger: 0.3,
     ease: "power2.out",
     scrollTrigger: {
@@ -57,7 +57,7 @@ onMounted(() => {
   grid-template-columns: repeat(3, 1fr)
   grid-gap: 2rem
   margin-top: 2rem
-  margin-bottom: 4rem
+  margin-bottom: 8rem
   @include media("<=1200px", ">phone")
     padding: 0 1.5rem
   @include media("<=tablet")
@@ -69,4 +69,5 @@ onMounted(() => {
     grid-template-columns: repeat(1, 1fr)
     width: 90%
     margin: 0 auto
+    margin-bottom: 6rem
 </style>
