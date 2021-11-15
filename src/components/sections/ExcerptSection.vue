@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
 import Decoration from "../atoms/Decoration.vue";
 </script>
 

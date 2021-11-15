@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
 import Timeline from "@/components/molecules/Timeline.vue";
 import { timelineItems } from "@/content/timeline";
 </script>

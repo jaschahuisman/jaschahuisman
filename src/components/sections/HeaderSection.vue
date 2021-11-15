@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import gsap from "@/vendors/gsap";
 import { ref, onMounted } from "vue";
-import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
 import Decoration from "@/components/atoms/Decoration.vue";
 
 const headerRef = ref(null);

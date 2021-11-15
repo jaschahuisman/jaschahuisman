@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "@vue/runtime-core";
 import gsap from "@/vendors/gsap";
-import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 import FooterSection from "@/components/molecules/FooterSection.vue";
 
 defineProps<{

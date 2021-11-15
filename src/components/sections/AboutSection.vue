@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
-import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
-</script>
-
 <template>
   <container-wrapper class="about-container">
     <section-wrapper

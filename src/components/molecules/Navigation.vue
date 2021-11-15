@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import MenuItem from "@/components/atoms/MenuItem.vue";
-import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 
 defineProps<{ menuItems: Array<{ label: string; href: string }> }>();
 </script>
