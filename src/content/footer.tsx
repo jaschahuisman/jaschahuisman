@@ -1,4 +1,6 @@
 import Button from "@/components/atoms/Button.vue";
+import IconGithub from "~icons/mdi/github";
+import IconBehance from "~icons/mdi/behance";
 
 export const footerSections: Array<{
   title: string;
@@ -14,6 +16,7 @@ export const footerSections: Array<{
         href="https://www.behance.net/jaschahuisman"
         newTab
       >
+        <IconBehance />
         Visit my portfolio
       </Button>
     ),
@@ -27,6 +30,7 @@ export const footerSections: Array<{
         href="https://www.github.com/jaschahuisman/jaschahuisman"
         newTab
       >
+        <IconGithub />
         Check the repo
       </Button>
     ),
