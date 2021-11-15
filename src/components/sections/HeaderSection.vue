@@ -1,17 +1,55 @@
 <script setup lang="ts">
+import gsap from "@/vendors/gsap";
+import { ref, onMounted } from "vue";
 import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 import SectionWrapper from "@/components/wrappers/SectionWrapper.vue";
 import Decoration from "@/components/atoms/Decoration.vue";
+
+const headerRef = ref(null);
+const headerTitleRef = ref(null);
+const headerImageRef = ref(null);
+
+onMounted(() => {
+  const headerElement = headerRef.value;
+  const headerTitleElement = headerTitleRef.value;
+  const headerImageElement = headerImageRef.value;
+
+  const timelineIn = gsap.timeline({
+    defaults: {
+      duration: 1,
+      delay: 0.2,
+      ease: "power2.inOut",
+    },
+  });
+  const timelineOut = gsap.timeline({
+    defaults: {
+      duration: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: headerElement,
+        start: "0 25%",
+        end: "bottom top",
+        scrub: true,
+      },
+    },
+  });
+
+  timelineIn.from(headerElement, { y: 20, opacity: 0 });
+  timelineOut
+    .to(headerTitleElement, { y: -10, opacity: 0 })
+    .to(headerImageElement, { rotateX: 10, y: -50, opacity: 0 });
+});
 </script>
 
 <template>
   <container-wrapper class="header-container">
     <section-wrapper id="header" class="header-section" :animate="false">
-      <header ref="header" class="header" role="banner">
-        <span ref="headerTitle" class="header__title">
+      <header ref="headerRef" class="header" role="banner">
+        <span ref="headerTitleRef" class="header__title">
           Design & development <br />intertwined
         </span>
-        <span ref="headerImage" class="header__image-wrapper">
+
+        <span ref="headerImageRef" class="header__image-wrapper">
           <img
             class="header__image"
             alt="Jascha Huisman"
@@ -25,35 +63,38 @@ import Decoration from "@/components/atoms/Decoration.vue";
 </template>
 
 <style scoped lang="sass">
+@import "@/styles/_media.scss"
+.header-section
+  padding-top: 2rem
 .header
-  position: relative
-  height: 60vh
+  width: 100%
   &__title
-    position: absolute
-    font-size: 2rem
-    top: 45%
-    left: 6rem
-    font-family: 'Ubuntu', sans-serif
-    font-weight: 300
-    line-height: 1.25em
-    z-index: 1
-    letter-spacing: -0.05rem
-    text-shadow: 1px 1px 0px white, 2px 2px 0px white, 3px 3px 0px white, 4px 4px 4px white, -1px -1px 0px white, -2px -2px 2px white
+    display: block
+    font-size: 3.5rem
+    font-weight: 600
+    margin-bottom: 4rem
   &__image-wrapper
     position: relative
     display: block
-    float: right
-    height: 100%
-    width: 60%
+    height: 400px
+    width: 50%
+    transform: translateX(100%)
   &__image
-    width: 100%
     height: 100%
+    width: 100%
+    position: absolute
     object-fit: cover
-    object-position: 80%
   &__decoration
-    width: 100%
-    height: 100%
-    top: 2rem
-    left: -2rem
-    object-fit: cover
+    top: -20px
+    left: -20px
+  @include media("<=tablet")
+    &__title
+      font-size: 2.5rem
+      text-align: center
+    &__image-wrapper
+      width: 100%
+      transform: unset
+    &__image
+      right: 0
+      object-position: 90%
 </style>
