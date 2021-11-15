@@ -1,23 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import gsap from "@/vendors/gsap";
 import MenuItem from "@/components/atoms/MenuItem.vue";
 import ContainerWrapper from "@/components/wrappers/ContainerWrapper.vue";
 
 defineProps<{ menuItems: Array<{ label: string; href: string }> }>();
-
-const navigationRef = ref(null);
-
-onMounted(() => {
-  const navigationElement = navigationRef.value;
-  gsap.from(navigationElement, {
-    opacity: 0,
-    duration: 2,
-    ease: "power3.out",
-    delay: 0.3,
-    y: -100,
-  });
-});
 </script>
 
 <template>
@@ -59,19 +44,7 @@ onMounted(() => {
     &:hover
       color: $color-black
     @include media('<=tablet')
-      padding: 1rem 0
+      margin-top: 2rem
   &__menu
     display: flex
-    &__item
-      display: block
-      margin-left: 1rem
-      padding: 2rem 1rem
-      color: $midGray
-      cursor: pointer
-      transition: 300ms
-      @include media("<=tablet")
-        padding: 1rem 0
-        margin: 0 1rem
-      &:hover, &--active
-        color: $color-black
 </style>

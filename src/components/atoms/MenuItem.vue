@@ -17,4 +17,6 @@ defineProps<{ label: string; href: string }>();
   color: gray
   cursor: pointer
   transition: 300ms
+  &:hover, &:active
+    color: black
 </style>
