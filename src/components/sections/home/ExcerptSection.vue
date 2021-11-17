@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Decoration from "../atoms/Decoration.vue";
+import Decoration from "@/components/atoms/Decoration.vue";
 </script>
 
 <template>

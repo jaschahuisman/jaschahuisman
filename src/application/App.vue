@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import "@/styles/main.sass";
-import Navigation from "@/components/molecules/Navigation.vue";
-import Footer from "@/components/molecules/Footer.vue";
+import Navigation from "@/components/views/Navigation.vue";
+import Footer from "@/components/views/Footer.vue";
 import { footerSections } from "@/content/footer";
 import { menuItems } from "@/content/navigation";
 </script>

@@ -1,6 +1,6 @@
 import Button from "@/components/atoms/Button.vue";
 import IconGithub from "~icons/mdi/github";
-import IconBehance from "~icons/mdi/behance";
+import SocialIcons from "@/components/molecules/SocialIcons.vue";
 
 export const footerSections: Array<{
   title: string;
@@ -11,13 +11,8 @@ export const footerSections: Array<{
     title: "Interested in my work?",
     text: "Did I make you curious about my work? View my complete portfolio and follow my work!",
     component: (
-      <Button
-        variant="primary"
-        href="https://www.behance.net/jaschahuisman"
-        newTab
-      >
-        <IconBehance />
-        Visit my portfolio
+      <Button variant="primary" href="/projects">
+        Visit my projects
       </Button>
     ),
   },
@@ -38,5 +33,6 @@ export const footerSections: Array<{
   {
     title: "Let's connect.",
     text: "Give me a call, or even a text message will work. Then we we'll talk about what we can do for each other.",
+    component: <SocialIcons />,
   },
 ];

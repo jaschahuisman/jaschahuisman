@@ -39,7 +39,6 @@ defineProps<{
         width: 100%
         height: 256px
         object-fit: cover
-        margin-bottom: 2rem
     &__title
         margin-bottom: 0.5rem
 </style>

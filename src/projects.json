@@ -1,26 +1,56 @@
 {
+  "$schema": "../public/project.schema.json",
   "projects": [
     {
       "id": "twindle",
       "title": "Twindle",
-      "description": "Full-stack web application development using React, WebGL and realtime MQTT communication.",
-      "image": "https://source.unsplash.com/random/400x400",
+      "description": "Full-stack development for a Digital Twin IoT startup solution using WebGL, React and MQTT.",
       "date": "2021",
-      "categories": ["Back-end", "Front-end", "Marketing", "Innovation"],
+      "image": "https://source.unsplash.com/random",
+      "categories": ["front-end", "back-end", "marketing"],
+      "sections": [
+        {
+          "title": "Twinning is winning",
+          "content": "<p>Hello world!</p>"
+        }
+      ],
       "associations": [
         {
-          "name": "Handpicked Agencies",
+          "company": "Handpicked Agencies",
           "href": "https://www.handpickedagencies.com",
           "image": "https://pbs.twimg.com/profile_images/951557701569581057/XUmIH9IK.jpg"
         },
         {
-          "name": "TechTenna",
+          "company": "TechTenna",
           "href": "https://www.techtenna.com",
           "image": "https://techtenna.com/wp-content/uploads/2020/06/logo-techtenna-v0.jpeg"
         }
-      ],
+      ]
+    },
+    {
+      "id": "scriptorium",
+      "title": "Scriptorium",
+      "description": "Full-stack development for a Digital Twin IoT startup solution using WebGL, React and MQTT.",
+      "date": "2021",
+      "image": "https://source.unsplash.com/random/800x600",
+      "categories": ["front-end", "back-end", "marketing"],
       "sections": [
-        "<div><h3 class='title'>Hello World</h3><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit earum doloribus ad, ex optio sed impedit dicta repudiandae laborum tenetur quaerat eaque esse rem maxime quisquam eum ea magni deleniti iure illo nobis blanditiis totam. Atque molestiae in ratione sint, possimus explicabo eum iusto vero quia, ullam incidunt mollitia ad consequatur alias. Ipsa, quia molestias. Iusto, deleniti culpa? Quos, repellendus?</p></div>"
+        {
+          "title": "Twinning is winning",
+          "content": "<p>Hello world!</p>"
+        }
+      ],
+      "associations": [
+        {
+          "company": "Handpicked Agencies",
+          "href": "https://www.handpickedagencies.com",
+          "image": "https://pbs.twimg.com/profile_images/951557701569581057/XUmIH9IK.jpg"
+        },
+        {
+          "company": "TechTenna",
+          "href": "https://www.techtenna.com",
+          "image": "https://techtenna.com/wp-content/uploads/2020/06/logo-techtenna-v0.jpeg"
+        }
       ]
     }
   ]

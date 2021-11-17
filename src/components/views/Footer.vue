@@ -55,11 +55,12 @@ onMounted(() => {
   display: grid
   grid-template-columns: repeat(3, 1fr)
   grid-gap: 2rem
-  margin-top: 2rem
+  margin-top: 6rem
   margin-bottom: 8rem
   @include media("<=1200px", ">phone")
     padding: 0 1.5rem
   @include media("<=tablet")
+    margin-top: 4rem
     grid-template-columns: repeat(1, 1fr)
     justify-content: center
     text-align: center
