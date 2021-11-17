@@ -8,8 +8,7 @@ const props = defineProps<{
 }>();
 
 function className(base: string): string {
-  const position = props.index % 2 === 0 ? "left" : "right";
-  return `${base} ${base}--${position}`;
+  return `${base} ${base}--${props.index % 2 === 0 ? "left" : "right"}`;
 }
 </script>
 

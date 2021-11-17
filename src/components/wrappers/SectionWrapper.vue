@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import gsap from "@/vendors/gsap";
+import { sectionAnimations } from "@/helpers/animations";
 
 const props = withDefaults(
   defineProps<{ title?: string; titleOffset?: string; animate?: boolean }>(),
@@ -12,19 +12,7 @@ const sectionRef = ref(null);
 onMounted(() => {
   const sectionElement = sectionRef.value;
   if (props.animate === true) {
-    gsap.from(sectionElement, {
-      opacity: 0,
-      y: 10,
-      scale: 0.97,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: sectionElement,
-        start: "top 90%",
-        end: "60% 30%",
-        scrub: true,
-      },
-    });
+    sectionAnimations(sectionElement);
   }
 });
 </script>

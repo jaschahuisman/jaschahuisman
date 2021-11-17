@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import gsap from "@/vendors/gsap";
 import { ref, onMounted } from "vue";
 import Decoration from "@/components/atoms/Decoration.vue";
+import { headerAnimations } from "@/helpers/animations";
 
 const headerRef = ref(null);
 const headerTitleRef = ref(null);
@@ -11,31 +11,7 @@ onMounted(() => {
   const headerElement = headerRef.value;
   const headerTitleElement = headerTitleRef.value;
   const headerImageElement = headerImageRef.value;
-
-  const timelineIn = gsap.timeline({
-    defaults: {
-      duration: 1,
-      delay: 0.2,
-      ease: "power2.inOut",
-    },
-  });
-  const timelineOut = gsap.timeline({
-    defaults: {
-      duration: 1,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: headerElement,
-        start: "0 25%",
-        end: "bottom top",
-        scrub: true,
-      },
-    },
-  });
-
-  timelineIn.from(headerElement, { y: 20, opacity: 0 });
-  timelineOut
-    .to(headerTitleElement, { y: -10, opacity: 0 })
-    .to(headerImageElement, { rotateX: 10, y: -50, opacity: 0 });
+  headerAnimations(headerElement, headerTitleElement, headerImageElement);
 });
 </script>
 
@@ -46,7 +22,6 @@ onMounted(() => {
         <span ref="headerTitleRef" class="header__title">
           Design & development <br />intertwined
         </span>
-
         <span ref="headerImageRef" class="header__image-wrapper">
           <img
             class="header__image"

@@ -1,50 +1,25 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import gsap from "@/vendors/gsap";
 import TimelineItem from "@/components/molecules/TimelineItem.vue";
+import { timelineAnimations } from "@/helpers/animations";
 
 defineProps<{
-  timelineItems: Array<{
+  timelineItems: {
     title: string;
     description: string;
     date: string;
     image: string;
-  }>;
+  }[];
 }>();
 
 const timelineRef = ref(null);
 const timelineStemRef = ref(null);
-const timelineElements: Array<Element | unknown> = [];
+const timelineElements: unknown[] = [];
 
 onMounted(() => {
   const timelineElement = timelineRef.value;
   const timelineStemElement = timelineStemRef.value;
-  const trigger = {
-    trigger: timelineElement,
-    start: "top 50%",
-    end: "bottom 50%",
-  };
-  gsap.from(timelineElements, {
-    opacity: 0,
-    y: -70,
-    duration: 1.5,
-    stagger: 0.3,
-    ease: "power2.out",
-    scrollTrigger: {
-      ...trigger,
-      toggleActions: "play none none reverse",
-    },
-  });
-  gsap.from(timelineStemElement, {
-    opacity: 0,
-    height: 0,
-    duration: 1,
-    ease: "power1.out",
-    scrollTrigger: {
-      ...trigger,
-      scrub: true,
-    },
-  });
+  timelineAnimations(timelineElement, timelineStemElement, timelineElements);
 });
 </script>
 

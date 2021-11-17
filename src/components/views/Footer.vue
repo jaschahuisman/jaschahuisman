@@ -1,33 +1,19 @@
 <script setup lang="ts">
 import { ref, onMounted } from "@vue/runtime-core";
-import gsap from "@/vendors/gsap";
 import FooterSection from "@/components/molecules/FooterSection.vue";
+import { footerAnimations } from "@/helpers/animations";
 
 defineProps<{
-  // Todo: fix any type
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  footerSections: Array<{ title: string; text: string; component?: any }>;
+  footerSections: { title: string; text: string; component?: any }[];
 }>();
 
 const footerRef = ref(null);
-const footerElements: Array<Element | unknown> = [];
+const footerElements: unknown[] = [];
 
 onMounted(() => {
   const footerElement = footerRef.value;
-  gsap.from(footerElements, {
-    opacity: 0,
-    duration: 1,
-    delay: 0.2,
-    y: -20,
-    stagger: 0.3,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: footerElement,
-      start: "top 90%",
-      end: "bottom 90%",
-      toggleActions: "play none none reverse",
-    },
-  });
+  footerAnimations(footerElement, footerElements);
 });
 </script>
 
