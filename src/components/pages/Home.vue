@@ -3,7 +3,7 @@ import HeaderSection from "@/components/sections/HeaderSection.vue";
 import ExcerptSection from "@/components/sections/ExcerptSection.vue";
 import AboutSection from "@/components/sections/AboutSection.vue";
 import TimelineSection from "@/components/sections/TimelineSection.vue";
-import ContactSection from "../sections/ContactSection.vue";
+import ContactSection from "@/components/sections/ContactSection.vue";
 </script>
 
 <template>

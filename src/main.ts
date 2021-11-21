@@ -1,6 +1,6 @@
 import { createApp } from "vue";
-import App from "@/App.vue";
-import router from "@/router";
+import App from "@/application/App.vue";
+import router from "@/application/router";
 
 import SectionWrapper from "@/components/views/SectionWrapper.vue";
 
