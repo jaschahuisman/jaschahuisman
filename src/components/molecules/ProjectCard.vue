@@ -1,17 +1,19 @@
 <script setup lang="ts">
-defineProps<{
-  project: {
-    title: string;
-    description: string;
-    image: string;
-    date: string;
-    id: string;
-  };
-}>();
+interface IProject {
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  slug: string;
+}
+interface IProjectCardProps {
+  project: IProject;
+}
+defineProps<IProjectCardProps>();
 </script>
 
 <template>
-  <a :href="`/projects/${project.id}`" class="project-card">
+  <a class="project-card" :href="`/projects/${project.slug}`">
     <img
       :src="project.image"
       :alt="project.title"
@@ -23,22 +25,29 @@ defineProps<{
   </a>
 </template>
 
-<style scoped lang="sass">
+<style lang="sass" scoped>
 @import '@/styles/_colors.sass'
+@import '@/styles/_media.scss'
+@import '@/styles/_mixins.sass'
 .project-card
-    position: relative
-    display: flex
-    flex-direction: column
-    width: 100%
-    &__date
-       font-size: 0.8rem
-       font-weight: 500
-       margin-bottom: 0.5rem
-       color: $midGray
-    &__image
-        width: 100%
-        height: 256px
-        object-fit: cover
-    &__title
-        margin-bottom: 0.5rem
+  display: flex
+  flex-direction: column
+  min-width: 0
+  @include media("<=tablet")
+    padding-bottom: 2rem
+    border-bottom: 1px solid #efefef
+.project-card__image
+  height: 250px
+  margin-bottom: 1.5rem
+  object-fit: cover
+  @include skeleton
+.project-card__date
+  font-weight: 500
+  font-size: 0.9rem
+  color: $color-light
+  margin-bottom: 0.5rem
+.project-card__title
+  margin-bottom: 0.5rem
+  font-size: 2rem
+  font-weight: 800
 </style>

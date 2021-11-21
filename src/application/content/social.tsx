@@ -26,6 +26,6 @@ export const icons = [
     icon: IconInstagram,
     alt: "Instagram",
     color: "#E1306C",
-    href: "https://www.instagram.com/jaschahuisman",
+    href: "https://www.instagram.com/jaschahuisman/",
   },
 ];

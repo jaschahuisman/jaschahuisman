@@ -1,11 +1,15 @@
 <script setup lang="ts">
-const props = defineProps<{
-  index: number;
+interface ITimelineItem {
   title: string;
   description: string;
   date: string;
   image: string;
-}>();
+}
+interface ITimelineItemProps {
+  index: number;
+  timelineItem: ITimelineItem;
+}
+const props = defineProps<ITimelineItemProps>();
 
 function className(base: string): string {
   return `${base} ${base}--${props.index % 2 === 0 ? "left" : "right"}`;
@@ -14,11 +18,21 @@ function className(base: string): string {
 
 <template>
   <div ref="timelineItem" :class="className('timeline-item')">
-    <div :class="className('timeline-item__date')">{{ date }}</div>
-    <img :src="image" :alt="title" :class="className('timeline-item__image')" />
+    <div :class="className('timeline-item__date')">
+      {{ timelineItem.date }}
+    </div>
+    <img
+      :src="timelineItem.image"
+      :alt="timelineItem.title"
+      :class="className('timeline-item__image')"
+    />
     <div :class="className('timeline-item__content')">
-      <h3 :class="className('timeline-item__title')">{{ title }}</h3>
-      <p :class="className('timeline-item__description')">{{ description }}</p>
+      <h3 :class="className('timeline-item__title')">
+        {{ timelineItem.title }}
+      </h3>
+      <p :class="className('timeline-item__description')">
+        {{ timelineItem.description }}
+      </p>
     </div>
   </div>
 </template>

@@ -1,49 +1,51 @@
 <script setup lang="ts">
-import MenuItem from "@/components/atoms/MenuItem.vue";
-
-defineProps<{ menuItems: Array<{ label: string; href: string }> }>();
+import { menuItems } from "@/application/content/navigation";
 </script>
 
 <template>
-  <container-wrapper class="navigation-container">
-    <nav ref="navigationRef" class="navigation" role="navigation">
-      <a class="navigation__logo" title="Home" href="/">Jascha Huisman</a>
-      <div class="navigation__menu" role="list">
-        <menu-item
-          v-for="(menuItem, index) in menuItems"
-          :key="index"
-          :label="menuItem.label"
-          :href="menuItem.href"
-        />
-      </div>
-    </nav>
-  </container-wrapper>
+  <nav class="navigation">
+    <router-link to="/" class="navigation__logo">Jascha Huisman</router-link>
+    <menu class="navigation__menu">
+      <router-link
+        v-for="(menuItem, index) in menuItems"
+        :key="index"
+        :to="menuItem.href"
+        class="navigation__menu__item"
+      >
+        {{ menuItem.label }}
+      </router-link>
+    </menu>
+  </nav>
 </template>
 
 <style scoped lang="sass">
-@import "@/styles/_media.scss"
 @import "@/styles/_colors.sass"
+@import "@/styles/_media.scss"
+@import "@/styles/_mixins.sass"
 .navigation
+  @include container
   display: flex
-  flex-direction: row
+  flex-direction: column
   align-items: center
-  justify-content: space-between
+  justify-content: center
   height: 8rem
-  width: 100%
+  @include media(">=desktop")
+    flex-direction: row
+    justify-content: space-between
+.navigation__logo
+  padding: 1rem 0
   font-size: 1.2rem
-  @include media("<=tablet")
-    flex-direction: column
-    justify-content: center
-  &__logo
-    font-size: 1.2rem
-    color: $darkGray
-    display: block
-    font-weight: 700
+  font-weight: 600
+  color: $color-heading
+.navigation__menu
+  display: flex
+  align-items: center
+  &__item
+    padding: 1rem
+    font-weight: 500
     transition: 300ms
     &:hover
-      color: $color-black
-    @include media('<=tablet')
-      margin-top: 2rem
-  &__menu
-    display: flex
+      color: $color-dark
+    @include media(">=desktop")
+      margin-left: 1rem
 </style>

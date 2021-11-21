@@ -12,17 +12,17 @@ module.exports = {
     "@vue/prettier",
     "@vue/prettier/@typescript-eslint",
   ],
-  globals: {
-    defineProps: "readonly",
-  },
+  parser: "vue-eslint-parser",
   parserOptions: {
     ecmaVersion: 2021,
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "no-undef": "off",
+    "prettier/prettier": ["error", {}, { usePrettierrc: true }],
     "linebreak-style": ["error", "windows"],
     "vue/multi-word-component-names": "off",
+    "vue/no-v-html": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
@@ -34,8 +34,10 @@ module.exports = {
         },
       },
     ],
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "no-undef": "off",
-    "prettier/prettier": ["error", {}, { usePrettierrc: true }],
+  },
+  globals: {
+    defineProps: "readonly",
+    defineEmits: "readonly",
+    withDefaults: "readonly",
   },
 };

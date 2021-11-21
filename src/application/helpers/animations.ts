@@ -19,18 +19,18 @@ export function sectionAnimations(sectionElement: null) {
 }
 
 export function headerAnimations(
-  headerElement: null,
-  headerTitleElement: null,
-  headerImageElement: null,
+  headerElement: Element,
+  headerTitleElement: Element,
+  headerImageElement: Element,
 ) {
-  const timelineIn = gsap.timeline({
+  const headerInTl = gsap.timeline({
     defaults: {
       duration: 1,
       delay: 0.2,
       ease: "power2.inOut",
     },
   });
-  const timelineOut = gsap.timeline({
+  const headerOutTl = gsap.timeline({
     defaults: {
       duration: 1,
       ease: "power2.inOut",
@@ -43,16 +43,16 @@ export function headerAnimations(
     },
   });
 
-  timelineIn.from(headerElement, { y: 20, opacity: 0 });
-  timelineOut
+  headerInTl.from(headerElement, { y: 20, opacity: 0 });
+  headerOutTl
     .to(headerTitleElement, { y: -10, opacity: 0 })
-    .to(headerImageElement, { rotateX: 10, y: -50, opacity: 0 });
+    .to(headerImageElement, { rotateZ: 5, y: -100, opacity: 0 });
 }
 
 export function timelineAnimations(
-  timelineElement: null,
-  timelineStemElement: null,
-  timelineElements: unknown[],
+  timelineElement: Element,
+  timelineStemElement: Element,
+  timelineElements: Element[],
 ): void {
   const trigger = {
     trigger: timelineElement,
@@ -83,13 +83,13 @@ export function timelineAnimations(
 }
 
 export function footerAnimations(
-  footerElement: null,
-  footerElements: unknown[],
+  footerElement: Element,
+  footerElements: Element[],
 ): void {
   gsap.from(footerElements, {
     opacity: 0,
     duration: 1,
-    delay: 0.2,
+    delay: 0.3,
     y: -20,
     stagger: 0.3,
     ease: "power2.out",

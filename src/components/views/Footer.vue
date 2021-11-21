@@ -1,59 +1,60 @@
 <script setup lang="ts">
-import { ref, onMounted } from "@vue/runtime-core";
-import FooterSection from "@/components/molecules/FooterSection.vue";
-import { footerAnimations } from "@/helpers/animations";
+import { ref, onMounted } from "vue";
+import { footerSections } from "@/application/content/footer";
+import { footerAnimations } from "@/application/helpers/animations";
 
-defineProps<{
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  footerSections: { title: string; text: string; component?: any }[];
-}>();
-
-const footerRef = ref(null);
-const footerElements: unknown[] = [];
+const footerRef = ref<Element>();
+const footerSectionRefs = ref<Element[]>([]);
 
 onMounted(() => {
-  const footerElement = footerRef.value;
-  footerAnimations(footerElement, footerElements);
+  footerAnimations(footerRef.value as Element, footerSectionRefs.value);
 });
 </script>
 
 <template>
-  <container-wrapper class="footer-container" max-width="1200px">
-    <footer ref="footerRef" class="footer">
-      <div
-        v-for="(footerSection, index) in footerSections"
-        :key="index"
-        :ref="(footerElement) => footerElements.push(footerElement)"
-      >
-        <footer-section
-          :title="footerSection.title"
-          :text="footerSection.text"
-          :component="footerSection.component"
-        />
-      </div>
-    </footer>
-  </container-wrapper>
+  <footer ref="footerRef" class="footer">
+    <div
+      v-for="({ title, text, component }, index) in footerSections"
+      :ref="(element) => footerSectionRefs.push(element as Element)"
+      :key="index"
+      class="footer__section"
+    >
+      <h3 class="footer__section__title">{{ title }}</h3>
+      <p class="footer__section__text">{{ text }}</p>
+      <component :is="component" />
+    </div>
+  </footer>
 </template>
 
 <style scoped lang="sass">
+@import "@/styles/_colors.sass"
 @import "@/styles/_media.scss"
+@import "@/styles/_mixins.sass"
 .footer
+  @include container(1200px)
   display: grid
-  grid-template-columns: repeat(3, 1fr)
-  grid-gap: 2rem
-  margin-top: 6rem
+  justify-content: center
+  grid-template-columns: repeat(1, 1fr)
+  grid-gap: 4rem
+  padding: 4rem unset
+  margin-top: 2rem
   margin-bottom: 8rem
-  @include media("<=1200px", ">phone")
-    padding: 0 1.5rem
-  @include media("<=tablet")
-    margin-top: 4rem
-    grid-template-columns: repeat(1, 1fr)
-    justify-content: center
-    text-align: center
-    grid-gap: 5rem
-  @include media("<=tablet", ">phone")
-    grid-template-columns: repeat(1, 1fr)
-    width: 90%
-    margin: 0 auto
-    margin-bottom: 6rem
+  text-align: center
+  @include media("<desktop")
+    max-width: 500px
+  @include media(">=desktop")
+    justify-content: normal
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 1rem
+    margin-top: 3rem
+    margin-bottom: 4rem
+    text-align: left
+.footer__section
+  &__title
+    margin-bottom: 0.5rem
+    @include media(">=desktop")
+      margin-bottom: 1rem
+  &__text
+    &:not(:last-child)
+      margin-bottom: 2.5rem
 </style>

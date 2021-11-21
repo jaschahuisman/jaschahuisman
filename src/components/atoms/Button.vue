@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Decoration from "./Decoration.vue";
+
 interface IButtonProps {
   size?: "small" | "normal";
   variant?: "primary" | "secondary";
@@ -27,6 +28,7 @@ function className(base: string) {
       :target="newTab ? '_blank' : undefined"
       :rel="newTab ? 'noreferrer noopener' : undefined"
       :class="`button button--${size} button--${variant}`"
+      role="button"
     >
       <decoration :class="className('button__decoration')" />
       <span :class="className('button__background')" />
@@ -62,7 +64,7 @@ function className(base: string) {
     display: flex
     align-items: center
     svg:first-child
-      margin-right: 0.5rem
+      margin-right: 1rem
     svg:not(:first-child)
       margin-left: 0.5rem
   &__background
