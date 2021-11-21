@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { icons } from "@/application/content/social";
+import { icons } from "@/content/social";
 </script>
 
 <template>

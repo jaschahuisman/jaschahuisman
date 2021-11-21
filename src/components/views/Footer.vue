@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { footerSections } from "@/application/content/footer";
-import { footerAnimations } from "@/application/helpers/animations";
+import { footerSections } from "@/content/footer";
+import { footerAnimations } from "@/content/animations";
 
 const footerRef = ref<Element>();
 const footerSectionRefs = ref<Element[]>([]);

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { menuItems } from "@/application/content/navigation";
+import { menuItems } from "@/content/navigation";
 </script>
 
 <template>

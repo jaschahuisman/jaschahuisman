@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { timelineItems } from "@/application/content/timeline";
-import { timelineAnimations } from "@/application/helpers/animations";
+import { timelineItems } from "@/content/timeline";
+import { timelineAnimations } from "@/content/animations";
 import TimelineItem from "@/components/molecules/TimelineItem.vue";
 
 const timelineRef = ref<Element>();

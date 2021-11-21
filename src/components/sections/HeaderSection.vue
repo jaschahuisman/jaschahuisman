@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { headerAnimations } from "@/application/helpers/animations";
+import { headerAnimations } from "@/content/animations";
 import Decoration from "@/components/atoms/Decoration.vue";
 
 const headerRef = ref<Element>();
