@@ -44,7 +44,6 @@ defineProps<IAssociationSectionProps>();
 .association-section__associations
   display: flex
   flex-wrap: wrap
-  overflow-x: scroll
 .association-section__association
   display: flex
   align-items: center

@@ -4,7 +4,7 @@ interface IContent {
   content?: string;
 }
 interface IContentSectionProps {
-  content: IContent[];
+  content?: IContent[];
 }
 defineProps<IContentSectionProps>();
 </script>

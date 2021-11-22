@@ -1,12 +1,24 @@
 <script setup lang="ts">
-import { projects } from "@/projects.json";
+import { ref } from "vue";
+import { IProject } from "@/types/project";
 import ProjectCard from "@/components/molecules/ProjectCard.vue";
+import useFetch from "@/composition/useFetch";
+
+type IProjectsResponse = { projects: IProject[] };
+
+const jsonUrl = "/static/data/projects.json";
+const projects = ref<IProject[] | null>(null);
+const transformCallback = (data: IProjectsResponse) => {
+  console.log(data);
+  return data.projects;
+};
+useFetch<IProjectsResponse, IProject[]>(jsonUrl, projects, transformCallback);
 </script>
 
 <template>
   <main id="projects" class="projects-page">
     <h1 class="projects-page__title">Projects</h1>
-    <div class="project-page__grid">
+    <div v-if="projects && projects?.length > 0" class="project-page__grid">
       <project-card
         v-for="(project, index) in projects"
         :key="index"

@@ -1,21 +1,26 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { useRoute } from "vue-router";
-import { projects } from "@/projects.json";
+import { IProject } from "@/types/project";
 import ContentSection from "@/components/sections/project/ContentSection.vue";
 import AssociationsSection from "@/components/sections/project/AssociationsSection.vue";
 import ToolsSection from "@/components/sections/project/ToolsSection.vue";
 import LinksSection from "@/components/sections/project/LinksSection.vue";
-import Button from "@/components/atoms/Button.vue";
+import useFetch from "@/composition/useFetch";
+
+type IProjectsResponse = { projects: IProject[] };
 
 const route = useRoute();
-const project = projects.find((p) => p.slug === route.params.projectId);
-
-const nextProject = () => {
-  if (!project) return;
-  const index = projects.indexOf(project);
-  const nextIndex = index + 1;
-  return nextIndex >= projects.length ? projects[0] : projects[nextIndex];
+const jsonUrl = "/static/data/projects.json";
+const project = ref<IProject | null>(null);
+const transformCallback = (data: IProjectsResponse) => {
+  const foundProject = data.projects.find(
+    (project) => project.slug === route.params.projectId,
+  );
+  return foundProject;
 };
+
+useFetch<IProjectsResponse, IProject>(jsonUrl, project, transformCallback);
 </script>
 
 <template>
@@ -27,31 +32,17 @@ const nextProject = () => {
       <b class="project__description">{{ project.description }}</b>
       <content-section :content="project.content" />
       <associations-section
-        v-if="project.associations.length > 0"
+        v-if="project.associations && project.associations.length > 0"
         :associations="project.associations"
       />
-      <tools-section v-if="project.tools.length > 0" :tools="project.tools" />
-      <links-section v-if="project.links.length > 0" :links="project.links" />
-      <div class="project__buttons">
-        <Button
-          v-if="project.repository"
-          :href="project.repository"
-          variant="secondary"
-          class="project__buttons__button"
-        >
-          <icon-mdi-github />
-          <span>{{ project.cta.text }}</span>
-        </Button>
-        <Button
-          v-if="nextProject()"
-          variant="primary"
-          class="project__buttons__button"
-          :href="`/projects/${nextProject()?.slug}`"
-        >
-          <span>Next project</span>
-          <icon-mdi-arrow-right />
-        </Button>
-      </div>
+      <tools-section
+        v-if="project.tools && project.tools.length > 0"
+        :tools="project.tools"
+      />
+      <links-section
+        v-if="project.links && project.links.length > 0"
+        :links="project.links"
+      />
     </div>
   </main>
 </template>
