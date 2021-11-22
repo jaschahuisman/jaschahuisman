@@ -26,7 +26,6 @@ onMounted(() => {
         alt="Jascha Huisman"
         src="@/assets/img/banner.jpg"
       />
-      <Decoration class="header-section__decoration" />
     </span>
   </header>
 </template>
