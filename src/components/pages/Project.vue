@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import { projects } from "@/projects.json";
-import ContentSection from "@/components/sections/ContentSection.vue";
-import AssociationsSection from "@/components/sections/AssociationsSection.vue";
-import ToolsSection from "@/components/sections/ToolsSection.vue";
-import LinksSection from "@/components/sections/LinksSection.vue";
+import ContentSection from "@/components/sections/project/ContentSection.vue";
+import AssociationsSection from "@/components/sections/project/AssociationsSection.vue";
+import ToolsSection from "@/components/sections/project/ToolsSection.vue";
+import LinksSection from "@/components/sections/project/LinksSection.vue";
 import Button from "@/components/atoms/Button.vue";
 
 const route = useRoute();

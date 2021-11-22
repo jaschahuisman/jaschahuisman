@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import HeaderSection from "@/components/sections/HeaderSection.vue";
-import ExcerptSection from "@/components/sections/ExcerptSection.vue";
-import AboutSection from "@/components/sections/AboutSection.vue";
-import TimelineSection from "@/components/sections/TimelineSection.vue";
-import ContactSection from "@/components/sections/ContactSection.vue";
+import HeaderSection from "@/components/sections/home/HeaderSection.vue";
+import ExcerptSection from "@/components/sections/home/ExcerptSection.vue";
+import AboutSection from "@/components/sections/home/AboutSection.vue";
+import TimelineSection from "@/components/sections/home/TimelineSection.vue";
+import ContactSection from "@/components/sections/home/ContactSection.vue";
 </script>
 
 <template>
