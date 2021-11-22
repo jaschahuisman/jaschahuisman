@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface ILink {
   label?: string;
-  link?: string;
+  href?: string;
 }
 interface ILinkSectionProps {
   links: ILink[];
@@ -14,7 +14,7 @@ defineProps<ILinkSectionProps>();
     <h3 class="links-section__title">Links</h3>
     <ul>
       <li v-for="(link, index) in links" :key="index">
-        <a :href="link.link">{{ link.label || link.link }}</a>
+        <a :href="link.href">{{ link.label || link.href }}</a>
       </li>
     </ul>
   </section>
