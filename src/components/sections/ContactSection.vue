@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import Decoration from "@/components/atoms/Decoration.vue";
-</script>
-
 <template>
   <section-wrapper
     id="contact"
@@ -29,7 +25,6 @@ import Decoration from "@/components/atoms/Decoration.vue";
           </li>
         </ul>
       </div>
-      <Decoration class="contact__decoration" />
     </div>
   </section-wrapper>
 </template>
@@ -41,6 +36,12 @@ import Decoration from "@/components/atoms/Decoration.vue";
 .contact-section
   position: relative
   @include container(500px)
+  &::after
+    @include decoration
+    top: 0
+    width: 100%
+    height: 100%
+    left: 50%
 .contact
   display: flex
   flex-direction: column
@@ -81,9 +82,4 @@ import Decoration from "@/components/atoms/Decoration.vue";
   .icon
     color: $color-light
     margin-right: 1rem
-.contact__decoration
-  top: 0
-  width: 100%
-  height: 100%
-  left: 50%
 </style>

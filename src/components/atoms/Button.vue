@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Decoration from "./Decoration.vue";
-
 interface IButtonProps {
   size?: "small" | "normal";
   variant?: "primary" | "secondary";
@@ -30,7 +28,6 @@ function className(base: string) {
       :class="`button button--${size} button--${variant}`"
       role="button"
     >
-      <decoration :class="className('button__decoration')" />
       <span :class="className('button__background')" />
       <span :class="className('button__text')">
         <slot />
@@ -40,6 +37,7 @@ function className(base: string) {
 </template>
 
 <style lang="sass">
+@import '@/styles/_mixins.sass'
 .button
   position: relative
   display: inline-flex
@@ -50,16 +48,17 @@ function className(base: string) {
   font-family: "Montserrat", sans-serif
   transition: 300ms
   cursor: pointer
-  &:hover
-    transform: translate(2px, 2px)
-    .button__decoration
-      transform: translate(-5px, -5px)
-  &__decoration
+  &::after
+    @include decoration
     opacity: 1
     height: 100%
     width: 100%
     transition: 300ms
     transform: translate(-10px, -10px)
+  &:hover
+    transform: translate(2px, 2px)
+    &::after
+      transform: translate(-5px, -5px)
   &__text
     display: flex
     align-items: center

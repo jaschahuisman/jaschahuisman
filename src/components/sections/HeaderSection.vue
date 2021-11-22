@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { headerAnimations } from "@/content/animations";
-import Decoration from "@/components/atoms/Decoration.vue";
 
 const headerRef = ref<Element>();
 const headerTitleRef = ref<Element>();
@@ -54,6 +53,10 @@ onMounted(() => {
   position: relative
   width: 100%
   height: 400px
+  &::after
+    @include decoration
+    top: -20px
+    left: -20px
   @include media(">=tablet")
     width: 50%
     margin: 0 auto
@@ -68,7 +71,4 @@ onMounted(() => {
   height: 100%
   object-fit: cover
   object-position: 90%
-.header-section__decoration
-  top: -20px
-  left: -20px
 </style>

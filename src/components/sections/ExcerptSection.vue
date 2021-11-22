@@ -1,10 +1,5 @@
-<script setup lang="ts">
-import Decoration from "@/components/atoms/Decoration.vue";
-</script>
-
 <template>
   <section-wrapper id="excerpt" class="excerpt-section">
-    <Decoration class="excerpt-section__decoration" />
     <h2 class="excerpt-section__text">
       Since my legs can carry me, I have been in touch with tech, art and
       design. I have carried camera’s, paint brushes, computers, screwdrivers,
@@ -20,10 +15,11 @@ import Decoration from "@/components/atoms/Decoration.vue";
 .excerpt-section
   @include container
   position: relative
-.excerpt-section__decoration
-  height: 80%
-  right: 50%
-  top: 0
+  &::after
+    @include decoration
+    height: 80%
+    right: 50%
+    top: 0
 .excerpt-section__text
   text-align: center
   font-size: 2.25rem

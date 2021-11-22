@@ -36,7 +36,8 @@ onMounted(() => {
   justify-content: center
   grid-template-columns: repeat(1, 1fr)
   grid-gap: 4rem
-  padding: 4rem unset
+  padding-top: 4rem
+  paddding-bottom: 4rem
   margin-top: 2rem
   margin-bottom: 8rem
   text-align: center
