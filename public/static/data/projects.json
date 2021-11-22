@@ -1,61 +1,6 @@
 {
   "projects": [
     {
-      "slug": "twindle",
-      "title": "Twindle",
-      "repository": null,
-      "description": "Full-stack development for a digital twin IoT startup solution to help companies innovate and offer new services to customers.",
-      "date": "2020",
-      "image": "/static/images/twindle_03.png",
-      "categories": ["front-end", "back-end", "marketing"],
-      "cta": {
-        "text": "Go see Twindle!",
-        "link": "http://twindle.io/"
-      },
-      "content": [
-        {
-          "title": "Twinning is winning",
-          "content": "<p>A Digital Twin is a digital copy of an entity, such as in this case a floor of a building, which is available at all times to provide you with real-time insight into interesting and useful data. This data can form the basis of many predictions on which a product or service can improve itself at a rapid pace. Digital twins help enterprises innovate and offer new services.</p><image src='/static/images/twindle_00.png'>"
-        },
-        {
-          "title": "Internet of things",
-          "content": "<p>Twindle collects data about various spaces via high-end Internet of Things sensors, such as temperature, humidity, movement, light, particulate matter and CO2. Based on the type of room, Twindle interprets the data for different use cases so that the user can act on it, for example: 'At 4:00 pm, guests arrive in room 124, where it is currently too cold. Turn up the heating', or 'The door of toilet 16 has already been used 34 times today, check the toilet for an early clean.'</p>"
-        },
-        {
-          "title": "Case",
-          "content": "<p>The proof of concept of the Twindle initiative was done in collaboration with Handpicked Agencies, the municipality of Breda, Techtenna and Postillion Hotels. During my internship at Handpicked Labs I was responsible for the backend communication between the LoraWan IoT network, the database server and the front-end. I also built the front-end application with WebGL integration in React.js.'</p>"
-        }
-      ],
-      "associations": [
-        {
-          "company": "Handpicked Agencies",
-          "href": "https://www.handpickedagencies.com",
-          "image": "https://pbs.twimg.com/profile_images/951557701569581057/XUmIH9IK.jpg"
-        },
-        {
-          "company": "TechTenna",
-          "href": "https://www.techtenna.com",
-          "image": "https://techtenna.com/wp-content/uploads/2020/06/logo-techtenna-v0.jpeg"
-        },
-        {
-          "company": "Postillion Hotels",
-          "href": "https://www.postillionhotels.com/",
-          "image": "https://www.postillionhotels.com/Postillion/media/Modules/Logo-Postillion-Hotels_1.jpg?ext=.jpg"
-        }
-      ],
-      "tools": [],
-      "links": [
-        {
-          "label": "Learn more about twindle",
-          "href": "http://twindle.io/"
-        },
-        {
-          "label": "Experience the Twindle demo",
-          "href": "http://demo.twindle.io/"
-        }
-      ]
-    },
-    {
       "slug": "scriptorium",
       "title": "Scriptorium",
       "repository": null,
@@ -111,6 +56,116 @@
         {
           "label": "Visit Graphic Matters",
           "href": "http://graphicmatters.nl"
+        }
+      ]
+    },
+    {
+      "slug": "human-robot",
+      "title": "Human robot interaction",
+      "repository": null,
+      "description": "Speculative interaction design research about alternative ways to control and interact with robots.",
+      "date": "2021",
+      "image": "/static/images/human-robot_00.png",
+      "categories": [
+        "interaction design",
+        "robot interfacing",
+        "speculative design"
+      ],
+      "content": [
+        {
+          "title": "Research",
+          "content": "<p>For the robotics and sensoring lectorate at the Avans Hogeschool in Breda, I did research to discover how we might interact with robotics in the future. Because the current way of dealing with robots is very dusty and obsolete, I had a very futuristic goal to control a robot with a brain computer interface (BCI).</p>"
+        },
+        {
+          "title": "Proof of concept",
+          "content": "<p>As a tech interested designer I have always been interested in the human brain. An incidental dream is making possible what seems impossible: controlling objects with your brain. Telekinesis is becoming more and more accessible with the latest technology trends. For example, take a look at <a href='https://www.next-mind.com/'>NextMind</a>. For my research I created a proof of concept with a couple of smart computer science students and the Ghost Robotics Vision 60 robot dog.</p>"
+        }
+      ],
+      "associations": [
+        {
+          "company": "Avans Hogeschool",
+          "href": "https://www.avans.nl",
+          "image": "https://media-exp1.licdn.com/dms/image/C4D0BAQFGwkWEXbj5uQ/company-logo_200_200/0/1550478171839?e=2159024400&v=beta&t=aR_fS8t_vmPsuaQ72oc0aBXMEXGUiiA0TNVEU19AkVE"
+        },
+        {
+          "company": "Breda Robotics",
+          "href": "https://www.breda-robotics.nl/",
+          "image": "https://www.breda-robotics.nl/public/themes/www/_compiled/images/logo.png"
+        }
+      ],
+      "tools": [
+        {
+          "name": "NextMind brain computer interface & Unity SDK",
+          "href": "https://www.next-mind.com/"
+        }
+      ],
+      "links": [
+        {
+          "label": "Discover the research paper",
+          "href": "https://www.avanscmd.nl/media/pages/work/labs-2020-2021/human-robot-alternative/d2646943ea-1631837566/onderzoeksresultaat_jascha_huisman_2121951_20_06_2021.pdf"
+        },
+        {
+          "label": "Learn more about Ghost Robotics",
+          "href": "https://www.ghostrobotics.io/"
+        },
+        {
+          "label": "Learn more about NextMind",
+          "href": "https://www.next-mind.com/"
+        }
+      ]
+    },
+    {
+      "slug": "twindle",
+      "title": "Twindle",
+      "repository": null,
+      "description": "Full-stack development for a digital twin IoT startup solution to help companies innovate and offer new services to customers.",
+      "date": "2020",
+      "image": "/static/images/twindle_03.png",
+      "categories": ["front-end", "back-end", "marketing"],
+      "cta": {
+        "text": "Go see Twindle!",
+        "link": "http://twindle.io/"
+      },
+      "content": [
+        {
+          "title": "Twinning is winning",
+          "content": "<p>A Digital Twin is a digital copy of an entity, such as in this case a floor of a building, which is available at all times to provide you with real-time insight into interesting and useful data. This data can form the basis of many predictions on which a product or service can improve itself at a rapid pace. Digital twins help enterprises innovate and offer new services.</p><image src='/static/images/twindle_00.png'>"
+        },
+        {
+          "title": "Internet of things",
+          "content": "<p>Twindle collects data about various spaces via high-end Internet of Things sensors, such as temperature, humidity, movement, light, particulate matter and CO2. Based on the type of room, Twindle interprets the data for different use cases so that the user can act on it, for example: 'At 4:00 pm, guests arrive in room 124, where it is currently too cold. Turn up the heating', or 'The door of toilet 16 has already been used 34 times today, check the toilet for an early clean.'</p>"
+        },
+        {
+          "title": "Case",
+          "content": "<p>The proof of concept of the Twindle initiative was done in collaboration with Handpicked Agencies, the municipality of Breda, Techtenna and Postillion Hotels. During my internship at Handpicked Labs I was responsible for the backend communication between the LoraWan IoT network, the database server and the front-end. I also built the front-end application with WebGL integration in React.js.'</p>"
+        }
+      ],
+      "associations": [
+        {
+          "company": "Handpicked Agencies",
+          "href": "https://www.handpickedagencies.com",
+          "image": "https://pbs.twimg.com/profile_images/951557701569581057/XUmIH9IK.jpg"
+        },
+        {
+          "company": "TechTenna",
+          "href": "https://www.techtenna.com",
+          "image": "https://techtenna.com/wp-content/uploads/2020/06/logo-techtenna-v0.jpeg"
+        },
+        {
+          "company": "Postillion Hotels",
+          "href": "https://www.postillionhotels.com/",
+          "image": "https://www.postillionhotels.com/Postillion/media/Modules/Logo-Postillion-Hotels_1.jpg?ext=.jpg"
+        }
+      ],
+      "tools": [],
+      "links": [
+        {
+          "label": "Learn more about twindle",
+          "href": "http://twindle.io/"
+        },
+        {
+          "label": "Experience the Twindle demo",
+          "href": "http://demo.twindle.io/"
         }
       ]
     }
