@@ -4,11 +4,11 @@ import { IProject } from "@/types/project";
 import ProjectCard from "@/components/molecules/ProjectCard.vue";
 import useFetch from "@/composition/useFetch";
 
-type IProjectsResponse = { projects: IProject[] };
+type IProjectsResponse = IProject[];
 
 const jsonUrl = "/static/data/projects.json";
 const projects = ref<IProject[] | null>(null);
-const transformCallback = (data: IProjectsResponse) => data.projects;
+const transformCallback = (data: IProjectsResponse) => data;
 
 useFetch<IProjectsResponse, IProject[]>(jsonUrl, projects, transformCallback);
 </script>

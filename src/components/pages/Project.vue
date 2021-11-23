@@ -9,13 +9,13 @@ import ToolsSection from "@/components/sections/project/ToolsSection.vue";
 import LinksSection from "@/components/sections/project/LinksSection.vue";
 import useFetch from "@/composition/useFetch";
 
-type IProjectsResponse = { projects: IProject[] };
+type IProjectsResponse = IProject[];
 
 const route = useRoute();
 const jsonUrl = "/static/data/projects.json";
 const project = ref<IProject | null>(null);
 const projectTransformCallback = (data: IProjectsResponse) => {
-  const foundProject = data.projects.find(
+  const foundProject = data.find(
     (project) => project.slug === route.params.projectId,
   );
   return foundProject;
@@ -29,12 +29,11 @@ useFetch<IProjectsResponse, IProject>(
 
 const nextProject = ref<IProject | null>(null);
 const nextProjectTransformCallback = (data: IProjectsResponse) => {
-  const currentIndex = data.projects.findIndex(
+  const currentIndex = data.findIndex(
     (project) => project.slug === route.params.projectId,
   );
-  const nextIndex =
-    currentIndex + 1 === data.projects.length ? 0 : currentIndex + 1;
-  return data.projects[nextIndex];
+  const nextIndex = currentIndex + 1 === data.length ? 0 : currentIndex + 1;
+  return data[nextIndex];
 };
 useFetch<IProjectsResponse, IProject>(
   jsonUrl,
