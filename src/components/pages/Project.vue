@@ -14,14 +14,33 @@ type IProjectsResponse = { projects: IProject[] };
 const route = useRoute();
 const jsonUrl = "/static/data/projects.json";
 const project = ref<IProject | null>(null);
-const transformCallback = (data: IProjectsResponse) => {
+const projectTransformCallback = (data: IProjectsResponse) => {
   const foundProject = data.projects.find(
     (project) => project.slug === route.params.projectId,
   );
   return foundProject;
 };
 
-useFetch<IProjectsResponse, IProject>(jsonUrl, project, transformCallback);
+useFetch<IProjectsResponse, IProject>(
+  jsonUrl,
+  project,
+  projectTransformCallback,
+);
+
+const nextProject = ref<IProject | null>(null);
+const nextProjectTransformCallback = (data: IProjectsResponse) => {
+  const currentIndex = data.projects.findIndex(
+    (project) => project.slug === route.params.projectId,
+  );
+  const nextIndex =
+    currentIndex + 1 === data.projects.length ? 0 : currentIndex + 1;
+  return data.projects[nextIndex];
+};
+useFetch<IProjectsResponse, IProject>(
+  jsonUrl,
+  nextProject,
+  nextProjectTransformCallback,
+);
 </script>
 
 <template>
@@ -44,6 +63,16 @@ useFetch<IProjectsResponse, IProject>(jsonUrl, project, transformCallback);
         v-if="project.links && project.links.length > 0"
         :links="project.links"
       />
+      <div class="project__buttons">
+        <Button
+          variant="primary"
+          class="project__buttons__button"
+          :href="`/projects/${nextProject?.slug}`"
+        >
+          <span>Next project</span>
+          <icon-mdi-arrow-right />
+        </Button>
+      </div>
     </div>
     <div v-else class="project project--not-found">
       <h1 class="project__title">Project not found</h1>
