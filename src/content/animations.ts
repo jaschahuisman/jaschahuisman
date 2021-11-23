@@ -81,23 +81,3 @@ export function timelineAnimations(
     },
   });
 }
-
-export function footerAnimations(
-  footerElement: Element,
-  footerElements: Element[],
-): void {
-  gsap.from(footerElements, {
-    opacity: 0,
-    duration: 1,
-    delay: 0.3,
-    y: -20,
-    stagger: 0.3,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: footerElement,
-      start: "top 90%",
-      end: "bottom 90%",
-      toggleActions: "play none none reverse",
-    },
-  });
-}

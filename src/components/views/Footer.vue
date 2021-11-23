@@ -1,21 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
 import { footerSections } from "@/content/footer";
-import { footerAnimations } from "@/content/animations";
-
-const footerRef = ref<Element>();
-const footerSectionRefs = ref<Element[]>([]);
-
-onMounted(() => {
-  footerAnimations(footerRef.value as Element, footerSectionRefs.value);
-});
 </script>
 
 <template>
   <footer ref="footerRef" class="footer">
     <div
       v-for="({ title, text, component }, index) in footerSections"
-      :ref="(element) => footerSectionRefs.push(element as Element)"
       :key="index"
       class="footer__section"
     >
