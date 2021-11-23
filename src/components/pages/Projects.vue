@@ -8,10 +8,8 @@ type IProjectsResponse = { projects: IProject[] };
 
 const jsonUrl = "/static/data/projects.json";
 const projects = ref<IProject[] | null>(null);
-const transformCallback = (data: IProjectsResponse) => {
-  console.log(data);
-  return data.projects;
-};
+const transformCallback = (data: IProjectsResponse) => data.projects;
+
 useFetch<IProjectsResponse, IProject[]>(jsonUrl, projects, transformCallback);
 </script>
 

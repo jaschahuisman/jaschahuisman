@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 import { IProject } from "@/types/project";
+import Button from "@/components/atoms/Button.vue";
 import ContentSection from "@/components/sections/project/ContentSection.vue";
 import AssociationsSection from "@/components/sections/project/AssociationsSection.vue";
 import ToolsSection from "@/components/sections/project/ToolsSection.vue";
@@ -44,6 +45,13 @@ useFetch<IProjectsResponse, IProject>(jsonUrl, project, transformCallback);
         :links="project.links"
       />
     </div>
+    <div v-else class="project project--not-found">
+      <h1 class="project__title">Project not found</h1>
+      <Button variant="primary" href="/projects">
+        <icon-mdi-keyboard-return />
+        <span>Return to projects</span>
+      </Button>
+    </div>
   </main>
 </template>
 
@@ -52,9 +60,15 @@ useFetch<IProjectsResponse, IProject>(jsonUrl, project, transformCallback);
 @import "@/styles/_media.scss"
 @import "@/styles/_mixins.sass"
 .project
-    @include container
-    padding-top: 2rem
-    padding-bottom: 4rem
+  @include container
+  padding-top: 2rem
+  padding-bottom: 4rem
+.project--not-found
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  min-height: 60vh
 .project__date
   font-size: 0.9rem
   font-weight: 500
