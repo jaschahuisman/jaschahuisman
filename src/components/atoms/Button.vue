@@ -1,69 +1,43 @@
+<script setup lang="ts">
+interface IButtonProps {
+  size?: "small" | "normal";
+  variant?: "primary" | "secondary";
+  href?: string;
+  newTab?: boolean;
+}
+
+const props = withDefaults(defineProps<IButtonProps>(), {
+  size: "normal",
+  variant: "secondary",
+  href: undefined,
+  newTab: false,
+});
+
+function className(base: string) {
+  const { size, variant } = props;
+  return `${base} ${base}--${size} ${base}--${variant}`;
+}
+</script>
+
 <template>
   <div class="button-wrapper">
     <a
-      class="button"
-      :class="`button--${size} button--${variant}`"
-      role="button"
       :href="href"
-      :target="newTab ? '_blank' : null"
-      :rel="newTab ? 'noreferrer noopener' : null"
+      :target="newTab ? '_blank' : undefined"
+      :rel="newTab ? 'noreferrer noopener' : undefined"
+      :class="`button button--${size} button--${variant}`"
+      role="button"
     >
-      <Decoration class="button__decoration" />
-      <span class="button__background"></span>
-      <span class="button__text">
-        <icon v-if="icon" :icon="icon" />
+      <span :class="className('button__background')" />
+      <span :class="className('button__text')">
         <slot />
       </span>
     </a>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from "vue";
-import Decoration from "@/components/atoms/Decoration.vue";
-
-interface IButtonProps {
-  size: "small" | "normal";
-  variant: "primary" | "secondary";
-}
-
-export default defineComponent({
-  name: "Button",
-  components: {
-    Decoration,
-  },
-  props: {
-    href: {
-      type: String,
-      required: false,
-    },
-    newTab: {
-      type: Boolean,
-      required: false,
-    },
-    size: {
-      type: String as PropType<IButtonProps["size"]>,
-      default: function () {
-        return "normal";
-      },
-      required: false,
-    },
-    icon: {
-      type: String,
-      required: false,
-    },
-    variant: {
-      type: String as PropType<IButtonProps["variant"]>,
-      required: false,
-      default: function () {
-        return "secondary";
-      },
-    },
-  },
-});
-</script>
-
 <style lang="sass">
+@import '@/styles/_mixins.sass'
 .button
   position: relative
   display: inline-flex
@@ -73,17 +47,25 @@ export default defineComponent({
   padding: 1.25rem 2rem
   font-family: "Montserrat", sans-serif
   transition: 300ms
-  &:hover
-    transform: translate(2px, 2px)
-    .button__decoration
-      transform: translate(-5px, -5px)
-  svg
-    margin-right: 0.5em
-  &__decoration
+  cursor: pointer
+  &::after
+    @include decoration
+    opacity: 1
     height: 100%
     width: 100%
     transition: 300ms
     transform: translate(-10px, -10px)
+  &:hover
+    transform: translate(2px, 2px)
+    &::after
+      transform: translate(-5px, -5px)
+  &__text
+    display: flex
+    align-items: center
+    svg:first-child
+      margin-right: 1rem
+    svg:not(:first-child)
+      margin-left: 0.5rem
   &__background
     position: absolute
     height: 100%

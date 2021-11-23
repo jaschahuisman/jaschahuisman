@@ -1,0 +1,300 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "projects": [
+        {
+          "id": "project-id",
+          "title": "Project Title",
+          "description": "A description that briefly describes the project",
+          "image": "https://source.unsplash.com/random",
+          "date": "05-06-2000",
+          "categories": ["category", "other category"],
+          "sections": [
+            {
+              "title": "I'm a section!",
+              "content": "<h1>Hello world!</h1>"
+            }
+          ],
+          "associations": [
+            {
+              "company": "Company name",
+              "href": "https://www.company.com",
+              "image": "https://source.unsplash.com/random"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "required": ["projects"],
+  "properties": {
+    "projects": {
+      "$id": "#/properties/projects",
+      "type": "array",
+      "title": "The projects schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          {
+            "id": "project-id",
+            "title": "Project Title",
+            "description": "A description that briefly describes the project",
+            "image": "https://source.unsplash.com/random",
+            "date": "05-06-2000",
+            "categories": ["category", "other category"],
+            "sections": [
+              {
+                "title": "I'm a section!",
+                "content": "<h1>Hello world!</h1>"
+              }
+            ],
+            "associations": [
+              {
+                "company": "Company name",
+                "href": "https://www.company.com",
+                "image": "https://source.unsplash.com/random"
+              }
+            ]
+          }
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/projects/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/projects/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+              {
+                "id": "project-id",
+                "title": "Project Title",
+                "description": "A description that briefly describes the project",
+                "image": "https://source.unsplash.com/random",
+                "date": "05-06-2000",
+                "categories": ["category", "other category"],
+                "sections": [
+                  {
+                    "title": "I'm a section!",
+                    "content": "<h1>Hello world!</h1>"
+                  }
+                ],
+                "associations": [
+                  {
+                    "company": "Company name",
+                    "href": "https://www.company.com",
+                    "image": "https://source.unsplash.com/random"
+                  }
+                ]
+              }
+            ],
+            "required": [
+              "id",
+              "title",
+              "description",
+              "image",
+              "date",
+              "categories",
+              "sections",
+              "associations"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/id",
+                "type": "string",
+                "title": "The id schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": ["project-id"]
+              },
+              "title": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/title",
+                "type": "string",
+                "title": "The title schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": ["Project Title"]
+              },
+              "description": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/description",
+                "type": "string",
+                "title": "The description schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": ["A description that briefly describes the project"]
+              },
+              "image": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/image",
+                "type": "string",
+                "title": "The image schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": ["https://source.unsplash.com/random"]
+              },
+              "date": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/date",
+                "type": "string",
+                "title": "The date schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": ["05-06-2000"]
+              },
+              "categories": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/categories",
+                "type": "array",
+                "title": "The categories schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": [],
+                "examples": [["category", "other category"]],
+                "additionalItems": true,
+                "items": {
+                  "$id": "#/properties/projects/items/anyOf/0/properties/categories/items",
+                  "anyOf": [
+                    {
+                      "$id": "#/properties/projects/items/anyOf/0/properties/categories/items/anyOf/0",
+                      "type": "string",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": ["category", "other category"]
+                    }
+                  ]
+                }
+              },
+              "sections": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/sections",
+                "type": "array",
+                "title": "The sections schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": [],
+                "examples": [
+                  [
+                    {
+                      "title": "I'm a section!",
+                      "content": "<h1>Hello world!</h1>"
+                    }
+                  ]
+                ],
+                "additionalItems": true,
+                "items": {
+                  "$id": "#/properties/projects/items/anyOf/0/properties/sections/items",
+                  "anyOf": [
+                    {
+                      "$id": "#/properties/projects/items/anyOf/0/properties/sections/items/anyOf/0",
+                      "type": "object",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": {},
+                      "examples": [
+                        {
+                          "title": "I'm a section!",
+                          "content": "<h1>Hello world!</h1>"
+                        }
+                      ],
+                      "required": ["title", "content"],
+                      "properties": {
+                        "title": {
+                          "$id": "#/properties/projects/items/anyOf/0/properties/sections/items/anyOf/0/properties/title",
+                          "type": "string",
+                          "title": "The title schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["I'm a section!"]
+                        },
+                        "content": {
+                          "$id": "#/properties/projects/items/anyOf/0/properties/sections/items/anyOf/0/properties/content",
+                          "type": "string",
+                          "title": "The content schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["<h1>Hello world!</h1>"]
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  ]
+                }
+              },
+              "associations": {
+                "$id": "#/properties/projects/items/anyOf/0/properties/associations",
+                "type": "array",
+                "title": "The associations schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": [],
+                "examples": [
+                  [
+                    {
+                      "company": "Company name",
+                      "href": "https://www.company.com",
+                      "image": "https://source.unsplash.com/random"
+                    }
+                  ]
+                ],
+                "additionalItems": true,
+                "items": {
+                  "$id": "#/properties/projects/items/anyOf/0/properties/associations/items",
+                  "anyOf": [
+                    {
+                      "$id": "#/properties/projects/items/anyOf/0/properties/associations/items/anyOf/0",
+                      "type": "object",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": {},
+                      "examples": [
+                        {
+                          "company": "Company name",
+                          "href": "https://www.company.com",
+                          "image": "https://source.unsplash.com/random"
+                        }
+                      ],
+                      "required": ["company", "href", "image"],
+                      "properties": {
+                        "company": {
+                          "$id": "#/properties/projects/items/anyOf/0/properties/associations/items/anyOf/0/properties/company",
+                          "type": "string",
+                          "title": "The company schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["Company name"]
+                        },
+                        "href": {
+                          "$id": "#/properties/projects/items/anyOf/0/properties/associations/items/anyOf/0/properties/href",
+                          "type": "string",
+                          "title": "The href schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["https://www.company.com"]
+                        },
+                        "image": {
+                          "$id": "#/properties/projects/items/anyOf/0/properties/associations/items/anyOf/0/properties/image",
+                          "type": "string",
+                          "title": "The image schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": ["https://source.unsplash.com/random"]
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  ]
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}

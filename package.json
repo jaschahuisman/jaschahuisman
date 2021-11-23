@@ -1,48 +1,47 @@
 {
   "name": "jaschahuisman",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "lint": "eslint --ext .ts,vue --ignore-path .gitignore . --fix",
+    "format": "prettier -w -u ."
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/vue-fontawesome": "^3.0.0-5",
-    "core-js": "^3.6.5",
     "gsap": "^3.8.0",
-    "vue": "^3.0.0",
+    "vue": "^3.2.16",
+    "vue-gtag-next": "^1.14.0",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
+    "@iconify-json/mdi": "^1.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "@vitejs/plugin-vue-jsx": "^1.2.0",
+    "@vue/compiler-sfc": "^3.2.21",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
-    "lint-staged": "^9.5.0",
-    "node-sass": "^4.12.0",
-    "prettier": "^2.2.1",
-    "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5"
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "path": "^0.12.7",
+    "prettier": "^2.4.1",
+    "sass": "^1.43.4",
+    "typescript": "^4.4.3",
+    "unplugin-icons": "^0.12.18",
+    "unplugin-vue-components": "^0.17.2",
+    "vite": "^2.6.4",
+    "vite-svg-loader": "^3.1.0",
+    "vue-tsc": "^0.3.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
+      "npm run lint",
       "git add"
     ]
   }

@@ -1,139 +1,116 @@
+<script setup lang="ts">
+interface ITimelineItem {
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+}
+interface ITimelineItemProps {
+  index: number;
+  timelineItem: ITimelineItem;
+}
+const props = defineProps<ITimelineItemProps>();
+
+function className(base: string): string {
+  return `${base} ${base}--${props.index % 2 === 0 ? "left" : "right"}`;
+}
+</script>
+
 <template>
-  <div
-    class="timeline-item"
-    ref="timelineItem"
-    :position="index % 2 === 0 ? 'left' : 'right'"
-  >
-    <div class="timeline-item__date">{{ date }}</div>
-    <img :src="image" :alt="title" class="timeline-item__image" />
-    <div class="timeline-item__content">
-      <h3 class="timeline-item__title">{{ title }}</h3>
-      <p class="timeline-item__description">{{ description }}</p>
+  <div ref="timelineItem" :class="className('timeline-item')">
+    <div :class="className('timeline-item__date')">
+      {{ timelineItem.date }}
+    </div>
+    <img
+      :src="timelineItem.image"
+      :alt="timelineItem.title"
+      :class="className('timeline-item__image')"
+    />
+    <div :class="className('timeline-item__content')">
+      <h3 :class="className('timeline-item__title')">
+        {{ timelineItem.title }}
+      </h3>
+      <p :class="className('timeline-item__description')">
+        {{ timelineItem.description }}
+      </p>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import useAnimator from "@/components/hooks/useAnimator";
-
-export default defineComponent({
-  name: "TimelineItem",
-  props: {
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    date: { type: String, required: true },
-    image: { type: String, required: true },
-    index: { type: Number, required: true },
-  },
-  setup() {
-    const { animateFrom } = useAnimator();
-    return { animateFrom };
-  },
-  mounted() {
-    const element = this.$refs.timelineItem as HTMLElement;
-    this.animateFrom(element, {
-      opacity: 0,
-      top: -10,
-      duration: 1,
-      delay: this.index * 0.5,
-      scrollTrigger: {
-        trigger: element.parentElement,
-        start: "10% 50%",
-        end: "bottom top",
-      },
-    });
-  },
-});
-</script>
-
 <style lang="sass" scoped>
 @import '@/styles/_media.scss'
 @import '@/styles/_colors.sass'
+
+@mixin middle($X: 0, $Y: -50%)
+  position: absolute
+  top: 50%
+  transform: translate($X, $Y)
+
 .timeline-item
-    position: relative
-    width: 50%
-    &__date
-        display: inline-block
-        position: absolute
-        top: calc(50% - 0.5rem)
-        width: 50%
-        color: $midGray
-        font-weight: 500
-        font-size: 0.85rem
-        letter-spacing: 1px
-        z-index: 1
+  position: relative
+  width: 100%
+  &__date
+    @include middle
+    font-family: 'Montserrat', sans-serif
+    font-size: 0.9rem
+    font-weight: 500
+    color: $midGray
+  &__image
+    @include middle(0, -50%)
+    height: 3rem
+  &__content
+    padding-top: 2rem
+    padding-bottom: 2rem
+  &__title
+    font-size: 1.2rem
+    margin-bottom: 0.5rem
+  &::after
+    @include middle(0, -50%)
+    content: ''
+    width: 1rem
+    height: 1rem
+    background-color: $white
+    border: 2px solid $midGray
+    border-radius: 100%
+  @include media('<tablet')
     &__image
-        display: inline-block
-        position: absolute
-        top: calc(50% - 2rem)
-        height: 4rem
-        width: 4rem
-        font-size: 18px
-        border-radius: 40px
-        z-index: 1
+      left: 4rem
     &__content
-        padding: 2rem 8rem 2rem 0rem
-        position: relative
-    &__title
-        font-size: 1.2rem
-        font-weight: 500
-        margin-bottom: 0.5rem
+      padding-left: 8rem
     &::after
-        content: ''
-        position: absolute
-        width: 16px
-        height: 16px
-        top: calc(50% - 8px)
-        right: -9px
-        background: $white
-        border: 2px solid $color-black
-        border-radius: 1rem
-        z-index: 1
-    @include media('<=tablet')
-        width: 100%
-        padding-left: 13rem
-.timeline-item[position=left]
-    left: 0
-    .timeline-item__date
-        left: calc(100% + 2em)
-        text-align: left
-    .timeline-item__image
-        right: 2.5rem
-.timeline-item[position=right]
-    left: 50%
-    .timeline-item__date
-        right: calc(100% + 2em)
-        text-align: right
-    .timeline-item__image
-        left: 2.5rem
-    .timeline-item__content
-        padding: 2rem 0rem 2rem 8rem
+      left: 3rem
+  @include media('>=tablet', '<desktop')
+    &__image
+      height: 4rem
+      left: 6rem
+    &__content
+      padding-left: 12rem
     &::after
-        left: -7px
-    @include media('<=tablet')
-        left: 0%
-.timeline-item[position=left],
-.timeline-item[position=right]
-    @include media('<=tablet')
-        .timeline-item__content
-            padding: 2rem 0
-        .timeline-item__date
-            right: auto
-            text-align: left
-            left: 0px
-            padding-left: 1rem
-        .timeline-item__image
-            right: auto
-            left: 6rem
-        &::after
-            left: calc(5rem - 0.5rem)
-    @include media('<=phone')
-        padding-left: 11rem
-        .timeline-item__image
-            left: 5rem
-        .timeline-item__date
-            padding: 0
-        &::after
-            left: calc(5rem - 2rem)
+      left: 3.5rem
+  @include media('>=desktop')
+    width: 50%
+    &--left
+      &::after
+        right: -0.5rem
+    &--right
+      transform: translateX(100%)
+      &::after
+        left: -0.5rem
+    &__date--left
+      @include middle(calc(2rem + 100%), -50%)
+      right: 0
+    &__date--right
+      @include middle(calc(-100% - 2rem), -50%)
+      left: 0
+      text-align: right
+    &__image
+      height: 4.5rem
+      &--left
+        right: 1.5rem
+      &--right
+        left: 1.5rem
+    &__content--left
+      padding-right: 8rem
+    &__content--right
+      padding-left: 8rem
 </style>

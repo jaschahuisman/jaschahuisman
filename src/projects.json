@@ -1,0 +1,118 @@
+{
+  "projects": [
+    {
+      "slug": "twindle",
+      "title": "Twindle",
+      "repository": null,
+      "description": "Full-stack development for a digital twin IoT startup solution to help companies innovate and offer new services to customers.",
+      "date": "2020",
+      "image": "/static/images/twindle_03.png",
+      "categories": ["front-end", "back-end", "marketing"],
+      "cta": {
+        "text": "Go see Twindle!",
+        "link": "http://twindle.io/"
+      },
+      "content": [
+        {
+          "title": "Twinning is winning",
+          "content": "<p>A Digital Twin is a digital copy of an entity, such as in this case a floor of a building, which is available at all times to provide you with real-time insight into interesting and useful data. This data can form the basis of many predictions on which a product or service can improve itself at a rapid pace. Digital twins help enterprises innovate and offer new services.</p><image src='/static/images/twindle_00.png'>"
+        },
+        {
+          "title": "Internet of things",
+          "content": "<p>Twindle collects data about various spaces via high-end Internet of Things sensors, such as temperature, humidity, movement, light, particulate matter and CO2. Based on the type of room, Twindle interprets the data for different use cases so that the user can act on it, for example: 'At 4:00 pm, guests arrive in room 124, where it is currently too cold. Turn up the heating', or 'The door of toilet 16 has already been used 34 times today, check the toilet for an early clean.'</p>"
+        },
+        {
+          "title": "Case",
+          "content": "<p>The proof of concept of the Twindle initiative was done in collaboration with Handpicked Agencies, the municipality of Breda, Techtenna and Postillion Hotels. During my internship at Handpicked Labs I was responsible for the backend communication between the LoraWan IoT network, the database server and the front-end. I also built the front-end application with WebGL integration in React.js.'</p>"
+        }
+      ],
+      "associations": [
+        {
+          "company": "Handpicked Agencies",
+          "href": "https://www.handpickedagencies.com",
+          "image": "https://pbs.twimg.com/profile_images/951557701569581057/XUmIH9IK.jpg"
+        },
+        {
+          "company": "TechTenna",
+          "href": "https://www.techtenna.com",
+          "image": "https://techtenna.com/wp-content/uploads/2020/06/logo-techtenna-v0.jpeg"
+        },
+        {
+          "company": "Postillion Hotels",
+          "href": "https://www.postillionhotels.com/",
+          "image": "https://www.postillionhotels.com/Postillion/media/Modules/Logo-Postillion-Hotels_1.jpg?ext=.jpg"
+        }
+      ],
+      "tools": [],
+      "links": [
+        {
+          "label": "Learn more about twindle",
+          "href": "http://twindle.io/"
+        },
+        {
+          "label": "Experience the Twindle demo",
+          "href": "http://demo.twindle.io/"
+        }
+      ]
+    },
+    {
+      "slug": "scriptorium",
+      "title": "Scriptorium",
+      "repository": null,
+      "description": "Creative development for a traveling art exhibition that transforms your handwriting into a downloadable font.",
+      "date": "2021",
+      "image": "/static/images/scriptorium.jpg",
+      "categories": ["front-end", "back-end", "marketing"],
+      "cta": {
+        "text": "Go see Twindle!",
+        "link": "http://twindle.io/"
+      },
+      "content": [
+        {
+          "title": "Case",
+          "content": "<p>Scriptorium is an exhibition that collects handwritings of thousands of people in North-Brabant, the Netherlands. Principles of heritage, design, language and technology come all together in the art installation.</p><img width='400' src='/static/images/scriptorium_01.png' />"
+        },
+        {
+          "title": "Development",
+          "content": "<p>Trough the back-end process I developed, every collected handwriting is converted into a digital font. Participants can <a src='https://scriptorium.graphicmatters.nl'>download their font</a> and use it for their own use in word processing or (web)design.</p><p>The first step in the development process was to create a server that processes out the scanned handwritings and store them on a database. Second, I developed an API to communicate the scanned handwritings to an external service, that then sends a .ttf back to the database server. This process is a good example of how great software automation can be in the creative industry.</p>"
+        }
+      ],
+      "associations": [
+        {
+          "company": "Handpicked Agencies",
+          "href": "https://www.handpickedagencies.com",
+          "image": "https://pbs.twimg.com/profile_images/951557701569581057/XUmIH9IK.jpg"
+        },
+        {
+          "company": "Graphic Matters",
+          "href": "https://graphicmatters.nl",
+          "image": "data:image/png;base64,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"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Node.js",
+          "href": "https://nodejs.org/en/"
+        },
+        {
+          "name": "MongoDB",
+          "href": "https://www.mongodb.com/"
+        },
+        {
+          "name": "Calligraphr",
+          "href": "https://www.calligraphr.com/en/"
+        }
+      ],
+      "links": [
+        {
+          "label": "Learn more about Scriptorium",
+          "href": "http://scriptorium.graphicmatters.nl"
+        },
+        {
+          "label": "Visit Graphic Matters",
+          "href": "http://graphicmatters.nl"
+        }
+      ]
+    }
+  ]
+}
