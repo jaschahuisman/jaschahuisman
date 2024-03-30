@@ -14,6 +14,7 @@
           <li class="contact__list-item" role="listitem">
             <icon-mdi-at class="icon" />
             <a href="mailto:info@jaschahuisman.nl">info@jaschahuisman.nl </a>
+            <br/>
             <a href="mailto:jascha.huisman@gmail.com">jascha.huisman@gmail.com </a>
           </li>
           <li class="contact__list-item" role="listitem">
